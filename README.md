@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Demo Application
 ========================
 
@@ -49,3 +50,7 @@ $ ./vendor/bin/simple-phpunit
 
 [1]: https://symfony.com/doc/current/reference/requirements.html
 [2]: https://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html
+=======
+# krisp_s4
+KRISP in S4
+>>>>>>> 28b2acbcc2ec6502c31576a65ec7c02a96744fb5
