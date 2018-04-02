@@ -3,15 +3,20 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * BInstalledSw
- *
+ * @ORM\Entity(repositoryClass="App\Repository\SoftwareRepository")
  * @ORM\Table(name="b_installed_sw")
  * @ORM\Entity
+ *
+ * @author San Emmanuel James <sanemmanueljames@gmail.com>
  */
 class BInstalledSw
 {
+    //max number of latest software retrieved
+    const NUM_ITEMS = 9;
+
     /**
      * @var integer
      *
@@ -32,6 +37,7 @@ class BInstalledSw
      * @var string
      *
      * @ORM\Column(name="sw_url", type="string", length=200, nullable=false)
+     * @Assert\NotBlank
      */
     private $swUrl;
 

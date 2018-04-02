@@ -24,9 +24,7 @@ class BSwExpert
      * @var \App\Entity\BInstalledSw
      * @ORM\id
      * @ORM\OneToOne(targetEntity="App\Entity\BInstalledSw")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id", unique=true)
-     * })
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
      */
     private $sw;
 
