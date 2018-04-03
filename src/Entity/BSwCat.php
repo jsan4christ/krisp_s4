@@ -7,10 +7,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * BSwCat
- *
+ * @ORM\Entity(repositoryClass="App\Repository\BSwCatRepository")
  * @ORM\Table(name="b_sw_cat")
- * @ORM\Entity
  */
 class BSwCat
 {
@@ -31,23 +29,25 @@ class BSwCat
     private $catName;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="BSwCat")
+     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="category")
      */
-    private $BinstalledSw;
+    protected $softwares;
 
     public function __construct()
     {
-        $this->BInstalledSw = new ArrayCollection();
-    }
-    /**
-     * @return Collection|BInstalledSw[]
-     */
-    public function getBInstalledSw()
-    {
-        return $this->BInstalledSw;
+        $this->softwares = new ArrayCollection();
     }
 
     //getters and setters
+
+    /**
+     * @return Collection|softwares[]
+     */
+    public function getInstalledSoftwares()
+    {
+        return $this->softwares;
+    }
+
 
     /**
      * @return int

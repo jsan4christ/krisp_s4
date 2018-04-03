@@ -7,26 +7,27 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * BSwExpert
  *
- * @ORM\Table(name="b_sw_expert", uniqueConstraints={@ORM\UniqueConstraint(name="ix_ReversePK", columns={"id", "sw_id"})}, indexes={@ORM\Index(name="IDX_6FDF8FF617B8E905", columns={"sw_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\BSwExpertsRepository")
+ * @ORM\Table(name="b_sw_expert", uniqueConstraints={@ORM\UniqueConstraint(name="ix_ReversePK", columns={"sw_id", "id"})}, indexes={@ORM\Index(name="IDX_6FDF8FF617B8E905", columns={"sw_id"})})
+
  */
+
 class BSwExpert
 {
     /**
      * One expert matches one person
      * @ORM\id
-     * @ORM\OneToOne(targetEntity="App\Entity\BPeople")
-     * @ORM\JoinColumn(name="id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="App\Entity\BPeople", inversedBy="expertise")
+     * @ORM\JoinColumn(name="id", referencedColumnName="id", nullable=FALSE)
      */
     private $id;
 
     /**
-     * @var \App\Entity\BInstalledSw
-     * @ORM\id
-     * @ORM\OneToOne(targetEntity="App\Entity\BInstalledSw")
-     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
+     * @var int
+     * @ORM\ManyToOne(targetEntity="App\Entity\BInstalledSw", inversedBy="experts")
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id", nullable=FALSE)
      */
-    private $sw;
+    protected $sw;
 
     /**
      * @var string
@@ -42,15 +43,38 @@ class BSwExpert
         $this->sw = $sw;
     }
 
-    public function getExpertId()
-    {
-        return $this->id;
-    }
-
-    public function getSwId()
+    /**
+     * @return int
+     */
+    public function getSw(): int
     {
         return $this->sw;
     }
 
-}
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     */
+    public function setType(string $type)
+    {
+        $this->type = $type;
+    }
+
+
+}

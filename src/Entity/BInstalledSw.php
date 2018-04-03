@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * BInstalledSw
@@ -49,18 +51,56 @@ class BInstalledSw
     private $swDesc;
 
     /**
-     * Many software belongs to one category
-     * @ORM\ManyToOne(targetEntity="App\Entity\BSwCat", inversedBy="BInstalledSw")
+     * Many software belong to one category
+     * @ORM\ManyToOne(targetEntity="App\Entity\BSwCat", inversedBy="softwares")
      * @ORM\JoinColumn(name="cat_id", referencedColumnName="cat_id")
      */
-    private $catId;
+    private $category;
 
     /**
-     * Each software belongs to one sub category
-     * @ORM\ManyToOne(targetEntity="App\Entity\BSwSubcat", inversedBy="BInstalledSw")
+     * Many software belong to one sub category
+     * @ORM\ManyToOne(targetEntity="App\Entity\BSwSubcat", inversedBy="softwares")
      * @ORM\JoinColumn(name="subcat_id", referencedColumnName="subcat_id")
      */
-    private $subcatId;
+    private $subcategory;
+
+    /**
+     * * Many software have multiple experts
+     * @var BSwExpert[]\ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="sw", cascade={"persist"})
+     * @ORM\OrderBy({"id" : "ASC"})
+     */
+    private $experts;
+
+    /**
+     * One software has many install locations
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software")
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
+     */
+    private $locations;
+
+    /**
+     * One software has many commands
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwCmds", mappedBy="software")
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
+     */
+    private  $commands;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $one;
+
+
+    public function __construct()
+    {
+        $this->experts = new ArrayCollection();
+        $this->locations = new ArrayCollection();
+        $this->commands = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -119,35 +159,41 @@ class BInstalledSw
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getCatId(): int
+    public function getCategory()
     {
-        return $this->catId;
+        return $this->category;
     }
 
     /**
-     * @param int $catId
+     * @param mixed $category
      */
-    public function setCatId(int $catId)
+    public function setCategory($category)
     {
-        $this->catId = $catId;
+        $this->category = $category;
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getSubcatId(): int
+    public function getSubcategory()
     {
-        return $this->subcatId;
+        return $this->subcategory;
     }
 
     /**
-     * @param int $subcatId
+     * @param mixed $subcategory
      */
-    public function setSubcatId(int $subcatId)
+    public function setSubcategory($subcategory)
     {
-        $this->subcatId = $subcatId;
+        $this->subcategory = $subcategory;
+    }
+
+
+    public function getExperts(): Collection
+    {
+        return $this->experts;
     }
 
 

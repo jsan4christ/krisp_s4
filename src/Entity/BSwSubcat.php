@@ -30,21 +30,21 @@ class BSwSubcat
     private $subcatName;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="BSwSubcat")
+     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="subcategory")
      */
-    private $BInstalledSw;
+    private $softwares;
 
     public function __construct()
     {
-        $this->BInstalledSw = new ArrayCollection();
+        $this->softwares = new ArrayCollection();
     }
 
     /**
-     * @return ArrayCollection|BInstalledSw[]
+     * @return ArrayCollection|softwares[]
      */
-    public function getBInstalledSw()
+    public function getInstalledSw()
     {
-        return $this->BInstalledSw;
+        return $this->softwares;
     }
     /**
      * @return int

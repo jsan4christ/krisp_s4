@@ -113,5 +113,41 @@ class BPeople
     private $category;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="id", cascade={"persist"})
+     */
+    protected $expertise;
+
+    public function __construct()
+    {
+        $this->expertise = new ArrayCollection();
+    }
+
+    public function getExpertise()
+    {
+        return $this->expertise->toArray();
+    }
+
+    public function addExpertise(Expertise_ $expertise_)//using expertise_ for each expertise an individual has
+    {
+        if (!$this->expertise->contains($expertise_)) {
+            $this->expertise->add($expertise_);
+            $expertise_->setBPeople($this);
+        }
+
+        return $this;
+    }
+
+
+    public function getSoftwareDetails()
+    {
+        return array_map(
+            function ($expertise_) {//using expertise_ for each expertise an individual has
+                return $expertise_->getBInstalledSw();
+            },
+            $this->expertise->toArray()
+        );
+    }
+
 }
 

@@ -14,21 +14,26 @@ class BSwInstLocn
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="sw_id", type="smallint")
+     * @ORM\ManyToOne(targetEntity="App\Entity\BInstalledSw", inversedBy="locations")
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $swId;
+    private $software;
 
     /**
      * @var integer
-     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\BServer")
      * @ORM\Column(name="svr_id", type="smallint")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+
      */
-    private $svrId;
+    private $server;
+
+    public function __construct($swId, $svrId)
+    {
+        $this->swId = $swId;
+        $this->svrId = $svrId;
+    }
 
     /**
      * @var string
