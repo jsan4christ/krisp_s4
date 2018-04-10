@@ -15,19 +15,21 @@ use Doctrine\ORM\Mapping as ORM;
 class BSwExpert
 {
     /**
-     * One expert matches one person
+     * Many experts matche one person
+     * @var int
      * @ORM\id
      * @ORM\ManyToOne(targetEntity="App\Entity\BPeople", inversedBy="expertise")
      * @ORM\JoinColumn(name="id", referencedColumnName="id", nullable=FALSE)
      */
-    private $id;
+    private $person;
 
     /**
      * @var int
+     * @ORM\id
      * @ORM\ManyToOne(targetEntity="App\Entity\BInstalledSw", inversedBy="experts")
      * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id", nullable=FALSE)
      */
-    protected $sw;
+    protected $software;
 
     /**
      * @var string

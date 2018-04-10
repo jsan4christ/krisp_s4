@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'update_server' %}
+
+{% block body %}
+    <h1>Add New Server</h1>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+            <input type="submit" class="btn btn-default pull-right" value="Update Server">
+        {{ form_end(form) }}
+
+{% endblock %}

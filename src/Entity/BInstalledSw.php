@@ -68,7 +68,7 @@ class BInstalledSw
      * * Many software have multiple experts
      * @var BSwExpert[]\ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="sw", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="person", cascade={"persist"})
      * @ORM\OrderBy({"id" : "ASC"})
      */
     private $experts;
@@ -88,11 +88,6 @@ class BInstalledSw
      * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
      */
     private  $commands;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $one;
 
 
     public function __construct()

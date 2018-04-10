@@ -114,9 +114,17 @@ class BPeople
 
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="id", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="person", cascade={"persist"})
      */
     protected $expertise;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="software", cascade={"persist"}
+     */
+
+    /**
+     * BPeople constructor.
+     */
 
     public function __construct()
     {

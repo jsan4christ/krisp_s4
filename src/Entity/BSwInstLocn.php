@@ -22,7 +22,7 @@ class BSwInstLocn
 
     /**
      * @var integer
-     * @ORM\ManyToOne(targetEntity="App\Entity\BServer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\BServer", inversedBy="locations")
      * @ORM\Column(name="svr_id", type="smallint")
      * @ORM\Id
 
