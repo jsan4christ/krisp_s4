@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'view_detail' %}
+{% block main %}
+    <h1>{{ software.swName }}</h1>
+    <p>{{ software.category.catName }}/{{ software.subcategory.subcatName }}</p>
+
+    <p>URL: {{ software.swUrl }}</p>
+
+    <p>Description: {{ software.swDesc }}</p>
+{% endblock %}
+{% block sidebar %}
+    <div class="section">
+       <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-lg btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i>Edit Software
+       </a>
+    </div>
+{% endblock %}

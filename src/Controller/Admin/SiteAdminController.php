@@ -46,13 +46,13 @@ class SiteAdminController extends AbstractController
     /**
      * View logged in user profile
      *
-     * @route("/view_profile", name="view_profile")
+     * @route("/my_profile", name="my_profile")
      */
-    public function view_profile(BSwExpertRepository $expert)
+    public function my_profile(BSwExpertRepository $expert)
     {
-        $experts = $expert->findAll();
+        $experts = $expert->find();
 
-        return $this->render('admin/view_profile.html.twig', [
+        return $this->render('admin/my_profile.html.twig', [
             'experts'=> $experts
         ]);
     }
@@ -115,12 +115,6 @@ class SiteAdminController extends AbstractController
 
         $server = new BServer();
 
-        //$server->setSvrName("Sittingbull"); 
-        //$server->setSvrIp('192.168.1.101'); 
-        //$server->setSvrAddr("http://muucsf.org"); 
-        //$server->setInstnsToAccess("Email the admin"); 
-        //$server->setInstnsToReqAcc("Email the admin");
-
         $form = $this->createForm(ServerType::class, $server); //create a form
 
         $form->handleRequest($request); //make sure it is valid
@@ -167,20 +161,31 @@ class SiteAdminController extends AbstractController
      * @route("/update_server/{svr_id}/edit", name="update_server", requirements={"id": "\d+"})
      * @Method({"GET", "POST"})
      */
-    public function update_server(Request $request, BServer $server): Response
+    public function update_server(Request $request, $svr_id): Response
     {
-        $form = $this->createForm(ServerType::class, $server);
+        $em = $this->getDoctrine()->getManager();
 
+        $server = $em->getRepository(BServer::class)->find($svr_id);
+
+        if(!$server){
+            throw $this->createNotFoundException(
+                'No server found with id '.$svr_id
+            );
+        }
+
+        $form = $this->createForm(ServerType::class, $server);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $this->getDoctrine()->getManager()->flush();
+            #$this->getDoctrine()->getManager()->flush();
+            $em->flush();
+
             $this->addFlash('success', 'Server updated successfuly');
 
             return $this->redirectToRoute('update_server', ['svr_id' => $server->getSvrId()]);
         }
 
-        return $this->render('/server/update_server.html.twig', [
+        return $this->render('admin/server/update_server.html.twig', [
             'server' => $server,
             'form' => $form->createView(),
         ]);
@@ -191,21 +196,20 @@ class SiteAdminController extends AbstractController
      * delete server details
      *
      * @route("/delete_server/{svr_id}", name="delete_server", requirements={"page"="\d+"})
+     * @Method("POST")
+     * @Security("is_granted('delete', server)")
      */
-    public function delete_server($svr_id)
+    public function delete_server(Request $request, BServer $server)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $server = $em->getRepository('App:BServer')->find($svr_id);
-
-
-        if(!$server){
-            throw $this->createNotFoundException(
-                'No server with the id '.$svr_id
-            );
+        if($this->isCsrfTokenValid('delete', $request->request->get('token'))){
+            return $this->redirectToRoute('admin_index');
         }
 
-        $em->flush();
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($server);
+
+        $this->addFlash('success', 'Server deleted successfuly');
 
         return $this->redirectToRoute('admin_index');
     }

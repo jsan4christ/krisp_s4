@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'add_software' %}
+    {% block main %}
+        {{ form_start(form) }}
+            {{ form_row(form.swName) }}
+            {{ form_row(form.swUrl) }}
+            {{ form_row(form.swDesc) }}
+            {{ form_row(form.category) }}
+            {{ form_row(form.subcategory) }}
+
+            <input type="submit" class="btn btn-default pull-right" value="Add Software">
+        {{ form_end(form) }}
+    {% endblock %}

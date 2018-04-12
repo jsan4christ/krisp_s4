@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'view_software' %}
+
+{% block main %}
+    <h1>List of Installed Software</h1>
+    <table class="table table-striped table-middle-aligned">
+        <thead>
+            <tr>
+                <th scope="col">Software ID</th>
+                <th scope="col">Software Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Sub Category</th>
+            </tr>
+        </thead>
+        {% for software in softwares %}
+            <tr>
+                <td><a href="{{ path('view_detail', {sw_id: software.swId}) }}" >{{ software.swId }}</a></td>
+                <td>{{ software.swName }}</td>
+                <td>{{ software.category.catName }}</td>
+                <td>{{ software.subcategory.subcatName }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('add_software') }}" class="btn btn-success btn-block btn-lg">
+            <i class="fa fa-plus"></i>Add Software
+        </a>
+    </div>
+{% endblock %}

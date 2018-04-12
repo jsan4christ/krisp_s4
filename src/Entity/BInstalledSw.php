@@ -105,26 +105,20 @@ class BInstalledSw
         return $this->swId;
     }
 
-    /**
-     * @return string
-     */
-    public function getSwName(): string
+
+    public function getSwName(): ?string
     {
         return $this->swName;
     }
 
-    /**
-     * @param string $swName
-     */
+
     public function setSwName(string $swName)
     {
         $this->swName = $swName;
     }
 
-    /**
-     * @return string
-     */
-    public function getSwUrl(): string
+
+    public function getSwUrl(): ?string
     {
         return $this->swUrl;
     }
@@ -137,10 +131,8 @@ class BInstalledSw
         $this->swUrl = $swUrl;
     }
 
-    /**
-     * @return string
-     */
-    public function getSwDesc(): string
+
+    public function getSwDesc(): ?string
     {
         return $this->swDesc;
     }
@@ -153,33 +145,25 @@ class BInstalledSw
         $this->swDesc = $swDesc;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getCategory()
     {
         return $this->category;
     }
 
-    /**
-     * @param mixed $category
-     */
+
     public function setCategory($category)
     {
         $this->category = $category;
     }
 
-    /**
-     * @return mixed
-     */
+
     public function getSubcategory()
     {
         return $this->subcategory;
     }
 
-    /**
-     * @param mixed $subcategory
-     */
+
     public function setSubcategory($subcategory)
     {
         $this->subcategory = $subcategory;
