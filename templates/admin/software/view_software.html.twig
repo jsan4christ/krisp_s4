@@ -22,6 +22,11 @@
             </tr>
         {% endfor %}
     </table>
+    {% if softwares.haveToPaginate %}
+        <div class="navigation text-center">
+            {{ pagerfanta(softwares, 'twitter_bootstrap3_translated', {routeName: 'view_software_paginated'}) }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block sidebar %}

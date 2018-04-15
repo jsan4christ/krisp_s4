@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body_id 'view_detail' %}
+
 {% block main %}
     <h1>{{ software.swName }}</h1>
     <p>{{ software.category.catName }}/{{ software.subcategory.subcatName }}</p>
@@ -8,6 +9,7 @@
     <p>URL: {{ software.swUrl }}</p>
 
     <p>Description: {{ software.swDesc }}</p>
+
 {% endblock %}
 {% block sidebar %}
     <div class="section">

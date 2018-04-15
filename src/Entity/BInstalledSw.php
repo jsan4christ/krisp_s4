@@ -10,14 +10,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  * BInstalledSw
  * @ORM\Entity(repositoryClass="App\Repository\SoftwareRepository")
  * @ORM\Table(name="b_installed_sw")
- * @ORM\Entity
  *
  * @author San Emmanuel James <sanemmanueljames@gmail.com>
  */
 class BInstalledSw
 {
-    //max number of latest software retrieved
-    const NUM_ITEMS = 9;
+    //max number of software retrieved
+    const NUM_ITEMS = 30;
 
     /**
      * @var integer
@@ -68,8 +67,7 @@ class BInstalledSw
      * * Many software have multiple experts
      * @var BSwExpert[]\ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="person", cascade={"persist"})
-     * @ORM\OrderBy({"id" : "ASC"})
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="software", cascade={"persist"})
      */
     private $experts;
 

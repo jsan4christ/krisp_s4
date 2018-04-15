@@ -22,18 +22,13 @@ class SoftwareRepository extends ServiceEntityRepository
         parent::__construct($registry, BInstalledSw::class);
     }
 
-    public function findLatest(int $page = 1): Pagerfanta
+    public function findAllPaginate(int $page = 1): Pagerfanta
     {
         $query = $this->getEntityManager()
             ->createQuery('
-                SELECT s, a, t
+                SELECT s
                 FROM App:BInstalledSw s
-                JOIN p.author a
-                LEFT JOIN p.tags t
-                WHERE p.publishedAt <= :now
-                ORDER BY p.publishedAt DESC
             ')
-            ->setParameter('now', new \DateTime())
         ;
 
         return $this->createPaginator($query, $page);
@@ -46,6 +41,15 @@ class SoftwareRepository extends ServiceEntityRepository
         $paginator->setCurrentPage($page);
 
         return $paginator;
+    }
+
+    public function getSoftwareDetails($sw_id)
+    {
+        $em = $this->getEntityManager();
+
+        $dql = $em->createQuery('SELECT s FROM App\Entity\BInstalledSw s WHERE s.swId = :sw_id');
+        $dql->setParameter('sw_id', $sw_id);
+        return $dql->getResult();
     }
 
     /**

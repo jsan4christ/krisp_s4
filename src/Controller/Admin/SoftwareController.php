@@ -32,14 +32,14 @@ class SoftwareController extends AbstractController
     /**
      * Show Software
      * @route("/view_all", defaults = {"page" = "1"},name="view_software")
-     * @route("/view_all/{page}", name="view_software_paginated)
-     * @Method("GET")
+     * @route("/view_all/{page}", name="view_software_paginated")
+     * @Method({"GET"})
      * @Cache(smaxage="10")
      */
     public function view_installed_software(int $page, SoftwareRepository $software): Response
     {
         //$softwares = $software->findAll();
-        $softwares = $software->findAllInstalledSw($page);
+        $softwares = $software->findAllPaginate($page);
 
         return $this->render('admin/software/view_software.html.twig', [
             'softwares' => $softwares,
@@ -53,9 +53,19 @@ class SoftwareController extends AbstractController
      * @Method({"POST", "GET"})
      *
      */
-    public function view_detail($sw_id){
+    /*public function view_detail($sw_id){
         $em = $this->getDoctrine()->getManager();
 
+        $software = $em->getRepository(BInstalledSw::class)->getSoftwareDetails($sw_id);
+
+        dump($software);
+        return $this->render('admin/software/view_detail.html.twig', [
+            'software' => $software
+        ]);
+    }
+*/
+    public function view_detail($sw_id){
+        $em = $this->getDoctrine()->getManager();
         $software = $em->getRepository(BInstalledSw::class)->find($sw_id);
 
         return $this->render('admin/software/view_detail.html.twig', [
@@ -80,7 +90,7 @@ class SoftwareController extends AbstractController
             $em->persist($software);
             $em->flush();
 
-            $this->addFlash('Success', 'Software successfully inserted into database');
+            $this->addFlash('success', 'Software successfully inserted into database');
 
             return $this->redirectToRoute('view_software');
         }
