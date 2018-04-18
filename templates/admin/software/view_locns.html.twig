@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'view_locns' %}
+
+{% block main %}
+    {{ dump(locns) }}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Software Name</th>
+                <th>Server Name</th>
+                <th>Install Location</th>
+                <th>Install Date</th>
+                <th>Instructions to Access</th>
+                <th>Instruction to Req. Access</th>
+            </tr>
+        </thead>
+        {% for locn in locns %}
+            <tr>
+                <td>{{ locn.software.swName }}</td>
+                <td>{{ locn.server.svrName }}</td>
+                <td>{{ locn.installLocn }}</td>
+                <td>{{ locn.installDate }}</td>
+                <td>{{ locn.howToLoad }}</td>
+                <td>{{ locn.hotToUnload }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

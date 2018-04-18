@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'update_subcat' %}
+
+{% block main %}
+    <h1>Update Sub Category</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.subcatName) }}
+        <button type="submit" class="btn-success btn">
+            <label>Update Sub Category</label> <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+    {{ form_end(form) }}
+{% endblock %}
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('view_subcats') }}" class="btn btn-success btn-block btn-lg">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> <label>View Sub Categories</label>
+        </a>
+    </div>
+{% endblock %}

@@ -99,4 +99,9 @@ class SoftwareRepository extends ServiceEntityRepository
             return 2 <= mb_strlen($term);
         });
     }
+
+    public function findAllWithSvrAndSwNames()
+    {
+
+    }
 }

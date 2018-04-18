@@ -54,17 +54,12 @@ class BSwSubcat
         return $this->subcatId;
     }
 
-     /**
-     * @return string
-     */
-    public function getSubcatName(): string
+
+    public function getSubcatName(): ?string
     {
         return $this->subcatName;
     }
 
-    /**
-     * @param string $subcatName
-     */
     public function setSubcatName(string $subcatName)
     {
         $this->subcatName = $subcatName;

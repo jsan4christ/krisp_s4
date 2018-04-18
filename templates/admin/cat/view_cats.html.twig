@@ -7,14 +7,14 @@
     <table class="table table-responsive table-center table-striped">
         <thead>
             <tr>
-                <th>Category ID</th>
+                <th>Click to Edit</th>
                 <th>Name</th>
             </tr>
         </thead>
     {% for cat in cats %}
         <tr>
             <td>
-               {{ cat.catId }}
+                <a href="{{ path('update_cat', {catId: cat.catId}) }}" class="btn btn-link"><i class="fa fa-edit"></i></a>
             </td>
             <td>
                 {{ cat.catName }}
@@ -26,6 +26,8 @@
 
 {% block sidebar %}
     <div class="section">
-        <a href="{{ path('add_cat') }}">Add New Category</a>
+        <a href="{{ path('add_cat') }}" class="btn btn-success btn-lg btn-block">Add New Category
+            <i aria-hidden="true" class="fa fa-plus"></i>
+        </a>
     </div>
 {% endblock %}

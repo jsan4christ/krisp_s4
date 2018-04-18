@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,6 +56,15 @@ class BServer
      */
     private $instnsToReqAcc;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="server")
+     */
+    protected $locations;
+
+    public function __construct()
+    {
+        $this->locations = new ArrayCollection();
+    }
 
     public function getSvrId(): int
     {
@@ -121,6 +131,9 @@ class BServer
         $this->instnsToReqAcc = $instnsToReqAcc;
     }
 
-
+    public function getLocations()
+    {
+        $this->locations->toArray();
+    }
 }
 

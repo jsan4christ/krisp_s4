@@ -10,6 +10,7 @@ namespace App\Controller\Admin;
 
 
 use App\Entity\BInstalledSw;
+use App\Entity\BSwInstLocn;
 use App\Form\SoftwareType;
 use App\Repository\SoftwareRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
@@ -125,6 +126,19 @@ class SoftwareController extends AbstractController
         return $this->render('admin/software/update_software.html.twig',[
             'software' => $software,
             'form' => $form->createView(),
+        ]);
+    }
+
+    ///Software Locations
+    /**
+     * @route("/view_locns", name="view_locns")
+     */
+    public function view_locns()
+    {
+        $locns = $this->getDoctrine()->getRepository(BSwInstLocn::class)->findAll();
+        dump($locns);
+        return $this->render('admin/software/view_locns.html.twig',[
+            'locns' => $locns,
         ]);
     }
 

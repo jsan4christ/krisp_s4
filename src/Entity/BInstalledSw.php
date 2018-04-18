@@ -74,16 +74,14 @@ class BInstalledSw
     /**
      * One software has many install locations
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software")
-     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software", orphanRemoval=TRUE)
      */
     private $locations;
 
     /**
      * One software has many commands
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwCmds", mappedBy="software")
-     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwCmds", mappedBy="software", orphanRemoval=TRUE)
      */
     private  $commands;
 
@@ -173,6 +171,10 @@ class BInstalledSw
         return $this->experts;
     }
 
+    public function getLocations()
+    {
+        $this->locations->toArray();
+    }
 
 }
 

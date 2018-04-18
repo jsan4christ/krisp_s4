@@ -49,25 +49,18 @@ class BSwCat
     }
 
 
-    /**
-     * @return int
-     */
     public function getCatId(): int
     {
         return $this->catId;
     }
 
-    /**
-     * @return string
-     */
-    public function getCatName(): string
+
+    public function getCatName(): ?string
     {
         return $this->catName;
     }
 
-    /**
-     * @param string $catName
-     */
+
     public function setCatName(string $catName)
     {
         $this->catName = $catName;

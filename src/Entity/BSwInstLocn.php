@@ -13,27 +13,25 @@ use Doctrine\ORM\Mapping as ORM;
 class BSwInstLocn
 {
     /**
+     * @ORM\Column(type="integer")
+     * @ORM\id
+     * @ORM\GeneratedValue
+     */
+    protected $id;
+
+    /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="App\Entity\BInstalledSw", inversedBy="locations")
-     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
-     * @ORM\Id
+     * @ORM\JoinColumn(nullable=TRUE)
      */
     private $software;
 
     /**
      * @var integer
      * @ORM\ManyToOne(targetEntity="App\Entity\BServer", inversedBy="locations")
-     * @ORM\Column(name="svr_id", type="smallint")
-     * @ORM\Id
-
+     * @ORM\JoinColumn(nullable=TRUE)
      */
     private $server;
-
-    public function __construct($swId, $svrId)
-    {
-        $this->swId = $swId;
-        $this->svrId = $svrId;
-    }
 
     /**
      * @var string
@@ -62,6 +60,110 @@ class BSwInstLocn
      * @ORM\Column(name="how_to_unload", type="string", length=200, nullable=false)
      */
     private $howToUnload;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSoftware(): int
+    {
+        return $this->software;
+    }
+
+    /**
+     * @param int $software
+     */
+    public function setSoftware(int $software)
+    {
+        $this->software = $software;
+    }
+
+    /**
+     * @return int
+     */
+    public function getServer(): int
+    {
+        return $this->server;
+    }
+
+    /**
+     * @param int $server
+     */
+    public function setServer(int $server)
+    {
+        $this->server = $server;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstallLocn(): string
+    {
+        return $this->installLocn;
+    }
+
+    /**
+     * @param string $installLocn
+     */
+    public function setInstallLocn(string $installLocn)
+    {
+        $this->installLocn = $installLocn;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getInstallDate(): \DateTime
+    {
+        return $this->installDate;
+    }
+
+    /**
+     * @param \DateTime $installDate
+     */
+    public function setInstallDate(\DateTime $installDate)
+    {
+        $this->installDate = $installDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHowToLoad(): string
+    {
+        return $this->howToLoad;
+    }
+
+    /**
+     * @param string $howToLoad
+     */
+    public function setHowToLoad(string $howToLoad)
+    {
+        $this->howToLoad = $howToLoad;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHowToUnload(): string
+    {
+        return $this->howToUnload;
+    }
+
+    /**
+     * @param string $howToUnload
+     */
+    public function setHowToUnload(string $howToUnload)
+    {
+        $this->howToUnload = $howToUnload;
+    }
 
 
 }

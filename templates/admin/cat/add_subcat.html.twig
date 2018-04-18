@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'add_subcat' %}
+
+{% block main %}
+    <h1>Add New Sub Category</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.subcatName) }}
+        <button type="submit" class="btn btn-success">
+            <label>Add New Category</label> <i class="fa fa-save" aria-hidden="true"></i>
+        </button>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('view_subcats') }}" class="btn btn-lg btn-success button-block">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <label>View Sub Categories</label>
+        </a>
+    </div>
+{% endblock %}
