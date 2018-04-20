@@ -71,12 +71,12 @@ class BInstalledSw
      */
     private $experts;
 
-    /**
-     * One software has many install locations
-     *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software", orphanRemoval=TRUE)
-     */
-    private $locations;
+   /**
+    * One software has many install locations
+    *
+    * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software", orphanRemoval=TRUE)
+   */
+   private $locations;
 
     /**
      * One software has many commands
@@ -176,5 +176,13 @@ class BInstalledSw
         $this->locations->toArray();
     }
 
+    public function getServers($locations)
+    {
+        return array_map(function($locations){
+            return $locations->getServer();
+        },
+        $this->locations->toArray()
+        );
+    }
 }
 

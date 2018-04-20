@@ -3,16 +3,16 @@
 {% block body_id 'view_locns' %}
 
 {% block main %}
-    {{ dump(locns) }}
-    <table class="table">
+    <h1>Software Locations</h1>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Software Name</th>
-                <th>Server Name</th>
-                <th>Install Location</th>
-                <th>Install Date</th>
-                <th>Instructions to Access</th>
-                <th>Instruction to Req. Access</th>
+                <th scope="col">Software Name</th>
+                <th scope="col">Server Name</th>
+                <th scope="col">Install Location</th>
+                <th scope="col">Install Date</th>
+                <th scope="col">Instructions to Access</th>
+                <th scope="col">Instruction to Req. Access</th>
             </tr>
         </thead>
         {% for locn in locns %}
@@ -20,10 +20,17 @@
                 <td>{{ locn.software.swName }}</td>
                 <td>{{ locn.server.svrName }}</td>
                 <td>{{ locn.installLocn }}</td>
-                <td>{{ locn.installDate }}</td>
+                <td>{{ locn.installDate | date('Y-m-d')}}</td>
                 <td>{{ locn.howToLoad }}</td>
-                <td>{{ locn.hotToUnload }}</td>
+                <td>{{ locn.howToUnload }}</td>
             </tr>
         {% endfor %}
     </table>
+{% endblock %}
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('add_locn') }}" class="btn-block btn-success btn-lg">
+            <label>Add New Location</label> <i class="fa fa-plus" aria-hidden="true"></i>
+        </a>
+    </div>
 {% endblock %}

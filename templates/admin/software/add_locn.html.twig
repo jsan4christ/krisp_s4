@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'add_locn' %}
+
+{% block main %}
+    <h1>Add New Location</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.software) }}
+        {{ form_row(form.server) }}
+        {{ form_row(form.installDate) }}
+        {{ form_row(form.installLocn) }}
+        {{ form_row(form.howToLoad) }}
+        {{ form_row(form.howToUnload) }}
+        <button type="submit" class="btn btn-success btn-primary">
+            <label>Add Location</label> <i class="fa fa-plus"></i>
+        </button>
+    {{ form_end(form) }}
+
+{% endblock %}
+{% block sidebar %}
+    <div class="section">
+
+    </div>
+{% endblock %}

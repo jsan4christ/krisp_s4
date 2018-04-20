@@ -13,23 +13,21 @@ use Doctrine\ORM\Mapping as ORM;
 class BSwInstLocn
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="locn_id")
      * @ORM\id
      * @ORM\GeneratedValue
      */
     protected $id;
 
     /**
-     * @var integer
      * @ORM\ManyToOne(targetEntity="App\Entity\BInstalledSw", inversedBy="locations")
-     * @ORM\JoinColumn(nullable=TRUE)
+     * @ORM\JoinColumn(name="sw_id", referencedColumnName="sw_id")
      */
     private $software;
 
     /**
-     * @var integer
      * @ORM\ManyToOne(targetEntity="App\Entity\BServer", inversedBy="locations")
-     * @ORM\JoinColumn(nullable=TRUE)
+     * @ORM\JoinColumn(name="svr_id", referencedColumnName="svr_id")
      */
     private $server;
 
@@ -46,6 +44,11 @@ class BSwInstLocn
      * @ORM\Column(name="install_date", type="date", nullable=false)
      */
     private $installDate;
+
+    public  function __construct()
+    {
+        $this->installDate = new \DateTime();
+    }
 
     /**
      * @var string
@@ -69,10 +72,8 @@ class BSwInstLocn
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
-    public function getSoftware(): int
+
+    public function getSoftware()
     {
         return $this->software;
     }
@@ -85,10 +86,7 @@ class BSwInstLocn
         $this->software = $software;
     }
 
-    /**
-     * @return int
-     */
-    public function getServer(): int
+    public function getServer()
     {
         return $this->server;
     }
@@ -104,7 +102,7 @@ class BSwInstLocn
     /**
      * @return string
      */
-    public function getInstallLocn(): string
+    public function getInstallLocn(): ?string
     {
         return $this->installLocn;
     }
@@ -136,7 +134,7 @@ class BSwInstLocn
     /**
      * @return string
      */
-    public function getHowToLoad(): string
+    public function getHowToLoad(): ?string
     {
         return $this->howToLoad;
     }
@@ -152,7 +150,7 @@ class BSwInstLocn
     /**
      * @return string
      */
-    public function getHowToUnload(): string
+    public function getHowToUnload(): ?string
     {
         return $this->howToUnload;
     }

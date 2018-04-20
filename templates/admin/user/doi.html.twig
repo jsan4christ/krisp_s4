@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'doi' %}
+
+{% block main %}
+    {% if dd is defined %}
+        <h1>{{ dd.message }}</h1>
+        {{ form_start(form) }}
+            {{ form_row(form.doi) }}
+        <button type="submit" class="btn-primary btn-lg btn btn-success">
+            <label>Search For Publication Details</label> <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        {{ form_end(form) }}
+
+    {% endif %}
+
+    <div class="section">
+        {% if result is defined %}
+            {{ dump(result) }}
+
+
+            {% for issn_ in ISSN %}
+               <span>ISSN {{ loop.index }}.</span> {{ issn_ }} <br />
+            {% endfor %}
+
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('admin_index') }}" class="btn btn-success btn-lg btn-primary">
+            <i aria-hidden="true" class="fa fa-arrow-left"></i> <label>Admin Home</label>
+        </a>
+    </div>
+{% endblock %}

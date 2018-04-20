@@ -100,8 +100,20 @@ class SoftwareRepository extends ServiceEntityRepository
         });
     }
 
-    public function findAllWithSvrAndSwNames()
+    public function findAllWithSvrAndSwNames($sw_id)
     {
+       //$dql = createQuery
+        $em = $this->getEntityManager();
 
+
+        $dql = $em->createQuery(
+            'SELECT s, e FROM App\Entity\BInstalledSw s LEFT JOIN s.experts e WHERE s.swId = :swId'
+        );
+        $dql->setParameter('swId', $sw_id);
+        $sw = $dql->getResult();
+
+        dump($sw);
+        return $sw;
     }
+//SELECT s, l, e FROM App\Entity\BInstalledSw s JOIN s.locations l JOIN s.experts e WHERE s.swId= :sw_id
 }

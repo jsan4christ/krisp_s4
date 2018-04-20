@@ -9,6 +9,7 @@
 namespace App\Form;
 
 
+use App\Entity\BInstalledSw;
 use App\Entity\BServer;
 use App\Entity\BSwInstLocn;
 use App\Form\Type\DateTimePickerType;
@@ -24,7 +25,7 @@ class LocationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('software', EntityType::class,[
-                    'class' => BSwInstLocn::class,
+                    'class' => BInstalledSw::class,
                     'choice_label' => 'swName',
                     'multiple' => false,
                     'expanded' => false

@@ -11,6 +11,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\BInstalledSw;
 use App\Entity\BSwInstLocn;
+use App\Form\LocationType;
 use App\Form\SoftwareType;
 use App\Repository\SoftwareRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
@@ -68,6 +69,9 @@ class SoftwareController extends AbstractController
     public function view_detail($sw_id){
         $em = $this->getDoctrine()->getManager();
         $software = $em->getRepository(BInstalledSw::class)->find($sw_id);
+       // $cat = $software->getCategory();
+       // dump($software);
+        //dump($cat);
 
         return $this->render('admin/software/view_detail.html.twig', [
             'software' => $software
@@ -136,10 +140,37 @@ class SoftwareController extends AbstractController
     public function view_locns()
     {
         $locns = $this->getDoctrine()->getRepository(BSwInstLocn::class)->findAll();
-        dump($locns);
+
         return $this->render('admin/software/view_locns.html.twig',[
             'locns' => $locns,
         ]);
     }
 
-}
+    /**
+     * @route("/add_locn", name="add_locn")
+     */
+    public function add_locn(Request $request): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $locn = new BSwInstLocn();
+
+        $form = $this->createForm(LocationType::class, $locn);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em->persist($locn);
+            $em->flush();
+
+            $this->addFlash('success', 'Location add!');
+
+            return $this->redirectToRoute('view_locns');
+        }
+
+        return $this->render('admin/software/add_locn.html.twig', [
+            'form' => $form->createView(),
+            'locn' => $locn,
+            ]);
+        }
+    }

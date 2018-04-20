@@ -52,7 +52,7 @@ class SiteAdminController extends AbstractController
     {
         $experts = $expert->find();
 
-        return $this->render('admin/my_profile.html.twig', [
+        return $this->render('admin/user/my_profile.html.twig', [
             'experts'=> $experts
         ]);
     }
