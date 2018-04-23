@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body_id 'show_servers' %}
-{% block body %}
-    <table>
-        <thead>List of KRISP Servers</thead>
+{% block main %}
+    <h1>KRISP Servers</h1>
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <td>Server ID</td>
-            <td>Name</td>
-            <td>IP Address</td>
-            <td>Instructions to Access</td>
-            <td>Instructions to Request Access</td>
+            <th>Server ID (click to edit)</th>
+            <th>Name</th>
+            <th>IP Address</th>
+            <th>Instructions to Access</th>
+            <th>Instructions to Request Access</th>
         </tr>
+        </thead>
         {% for server in servers %}
         <tr>
             <td><a href="{{ path('update_server', {svr_id: server.svrId}) }}">{{ server.svrId }}</a></td>
@@ -22,4 +24,12 @@
         {% endfor %}
     </table>
 
+{% endblock %}
+{% block sidebar %}
+    <div class="section">
+        <a href="{{ path('add_server') }}" class="btn btn-lg btn-block btn-success">
+            <label for="add_server">Add New Server</label> <i class="fa fa-plus" aria-hidden="true"></i>
+        </a>
+    </div>
+    {{ parent() }}
 {% endblock %}

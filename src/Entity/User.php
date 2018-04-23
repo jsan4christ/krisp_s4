@@ -13,19 +13,19 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="s_user")
+ * @UniqueEntity(fields="email", message="Email already taken")
+ * @UniqueEntity(fields="username", message="Username already taken")
  *
  * Defines the properties of the User entity to represent the application users.
  * See https://symfony.com/doc/current/book/doctrine.html#creating-an-entity-class
  *
  * Tip: if you have an existing database, you can generate these entity class automatically.
  * See https://symfony.com/doc/current/cookbook/doctrine/reverse_engineering.html
- *
- * @author Ryan Weaver <weaverryan@gmail.com>
- * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 class User implements UserInterface, \Serializable
 {
@@ -60,9 +60,16 @@ class User implements UserInterface, \Serializable
     private $email;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+
+    /**
      * @var string
      *
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=64)
      */
     private $password;
 
@@ -83,12 +90,12 @@ class User implements UserInterface, \Serializable
         $this->fullName = $fullName;
     }
 
-    public function getFullName(): string
+    public function getFullName(): ?string
     {
         return $this->fullName;
     }
 
-    public function getUsername(): string
+    public function getUsername(): ?string
     {
         return $this->username;
     }
@@ -98,7 +105,7 @@ class User implements UserInterface, \Serializable
         $this->username = $username;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -106,6 +113,16 @@ class User implements UserInterface, \Serializable
     public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
     }
 
     public function getPassword(): string

@@ -17,14 +17,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormBuilder;
 use Doctrine\DBAL;
-use App\Service\DbalConnection;
 /**
  * Class PeopleController
  * @package App\Controller\Admin
- * @route("/team")
+ * @route("/pub")
  */
 
-class PeopleController extends AbstractController
+class PubController extends AbstractController
 {
 
     /**
@@ -67,12 +66,15 @@ class PeopleController extends AbstractController
        }
 
        //dump($json_result);
+        if(isset($json_result)){
+            $result =json_decode($json_result) ;
+            $ISSN = $result->{'ISSN'};
+        }else{
+            $result = ['msg' => 'No result to display'];
+            $ISSN = '';
+        }
 
-       $result = isset($json_result) ? json_decode($json_result) : ['msg' => 'No result to display'];
-
-       $ISSN = $result->{'ISSN'};
-
-       return $this->render('admin/user/doi.html.twig', [
+       return $this->render('admin/pub/doi.html.twig', [
            'dd' => $defaultData,
            'form' => $form->createView(),
            'result' => $result,
@@ -83,19 +85,49 @@ class PeopleController extends AbstractController
     /**
      * @route("/add_missing_issns", name="add_missing_issns")
      */
-    public function update_issn(DbalConnection $conn)
+    public function update_issn()
     {
-        $conn_ = $conn->getDbConnection();
+        $em = $this->getDoctrine()->getManager();
 
-        $sql = "SELECT id, doi FROM b_publications WHERE doi IS NOT NULL AND issn = ''";
-        $stmt = $conn_->query($sql);
+        $sql = "SELECT id, doi FROM b_publications WHERE issn=''";
 
-        $result = $stmt->fetch();
-        dump($result);
+        $conn = $em->getConnection();
+        $stmt = $conn->prepare($sql);
+
+        $stmt->execute();
+
+        $pub_info = $stmt->fetchAll();
+
+        if($pub_info > 0){
+            foreach ($pub_info as $pub){
+                $curl = curl_init("".$pub['doi']."");
+                curl_setopt($curl, CURLOPT_FAILONERROR, true);
+                curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt($curl, CURLOPT_HTTPHEADER, array('Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0'));
+                $json_result =  curl_exec($curl);
+
+                $result = json_decode($json_result);
+
+                $ISSN_arr = $result->{'ISSN'};
+                $ISSN = $ISSN_arr[0];
+
+                $pubId = $pub["id"];
+
+                $upate_sql = "UPDATE `b_publications` SET `issn` = '".$ISSN."' WHERE `id` = :pubid";
+
+                $stmt2 = $conn->prepare($upate_sql);
+                $stmt2->bindValue('pubid', $pubId);
+                $stmt2->execute();
+            }
+        }
+
 
         $this->addFlash('success', 'Commands executed');
 
-        $this->redirectToRoute('admin_index');
+        return $this->redirectToRoute('admin_index');
 
     }
 

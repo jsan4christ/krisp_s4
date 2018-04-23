@@ -1,0 +1,17 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'reg_admin' %}
+
+{% block main %}
+    <h1>Register Admin</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.fullName) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.plainPassword.first) }}
+        {{ form_row(form.plainPassword.second) }}
+        <button type="submit" class="btn-success">
+            <label>Register Admin</label> <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    {{ form_end(form) }}
+{% endblock %}

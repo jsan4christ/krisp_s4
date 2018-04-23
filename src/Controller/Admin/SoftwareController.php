@@ -173,4 +173,36 @@ class SoftwareController extends AbstractController
             'locn' => $locn,
             ]);
         }
+
+
+        /**
+         * @route("/search", name="search_software")
+         * @Method("GET")
+         */
+
+        public function search_sw(Request $request, SoftwareRepository $sr)
+        {
+            if(!$request->isXmlHttpRequest()){
+                return $this->render('admin/software/search.html.twig');
+            }
+
+            $query = $request->query->get('q', '');
+            //dump($query);
+            $limit = $request->query->get('l', '10');
+
+            $foundSw = $sr->findBySearchQuery($query, $limit);
+            dump($foundSw);
+            $results = [];
+            foreach ($foundSw as $sw){
+                $results[] = [
+                    'sw_name' => htmlspecialchars($sw->getSwName()),
+                    'sw_url' => htmlspecialchars($sw->getSwUrl()),
+                    'sw_desc' => htmlspecialchars($sw->getSwDesc()),
+                    'category' => htmlspecialchars($sw->getCategory()->getCatName()),
+                    'subcategory' =>htmlspecialchars($sw->getSubcategory()->getSubcatName())
+                ];
+
+                dump($results);
+            }
+        }
     }

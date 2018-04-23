@@ -58,27 +58,29 @@ class SoftwareRepository extends ServiceEntityRepository
     public function findBySearchQuery(string $rawQuery, int $limit = BInstalledSw::NUM_ITEMS): array
     {
         $query = $this->sanitizeSearchQuery($rawQuery);
+        //dump($query);
         $searchTerms = $this->extractSearchTerms($query);
-
-        if (0 === count($searchTerms)) {
+        //dump($searchTerms);
+        if(0 === count($searchTerms)){
             return [];
         }
 
-        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder = $this->createQueryBuilder('s');
 
         foreach ($searchTerms as $key => $term) {
             $queryBuilder
-                ->orWhere('p.title LIKE :t_'.$key)
+                ->orWhere('s.swName LIKE :t_'.$key)
                 ->setParameter('t_'.$key, '%'.$term.'%')
-            ;
+                ;
         }
 
         return $queryBuilder
-            ->orderBy('p.publishedAt', 'DESC')
-            ->setMaxResults($limit)
-            ->getQuery()
-            ->getResult();
+                    ->orderBy('p.swName', 'DESC')
+                    ->setMaxResults($limit)
+                    ->getQuery()
+                    ->getResult();
     }
+
 
     /**
      * Removes all non-alphanumeric characters except whitespaces.

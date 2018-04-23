@@ -35,7 +35,7 @@ class SiteAdminController extends AbstractController
      */
     public function index()
     {
-        return $this->render('admin/home.html.twig',[
+        return $this->render('admin/admin/home.html.twig',[
             'title' => 'Admin Home'
         ]);
     }

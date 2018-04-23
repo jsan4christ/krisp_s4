@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/search.js') }}" ></script>
+{% endblock %}
+
+{% block body_id 'software_search' %}
+
+{% block main %}
+    <form action="{{ path('search_software') }}" method="get">
+        <div class="form-group">
+            <input  name="q"
+                    class="form-control search-field"
+                    placeholder="Search Software"
+                    autocomplete="off"
+                    autofocus
+                    data-no-results-message="Software Not Found"
+            >
+
+        </div>
+    </form>
+
+    <div id="results">
+        {#Search results listed here#}
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+
+{% endblock %}

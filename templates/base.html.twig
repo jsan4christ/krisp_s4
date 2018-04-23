@@ -38,18 +38,28 @@
 
                         </div>
                         <div class="navbar-collapse collapse">
+
                             <ul class="nav navbar-nav navbar-right">
+                                {% if app.user %}
+                                    <span style="color: #fff;">Welcome, {{ app.user.username }}</span>
+
+                                    <li>
+                                        <a href="{{ path('security_logout') }}">
+                                            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
+                                        </a>
+                                    </li>
+                                {% endif %}
 
                                 {% block header_navigation_links %}
                                     <li>
-                                        <a href="{{ path('blog_index') }}">
+                                        <a href="http://krisp.org.za">
                                             <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
                                         </a>
                                     </li>
 
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <li>
-                                            <a href="{{ path('admin_post_index') }}">
+                                            <a href="{{ path('admin_index') }}">
                                                 <i class="fa fa-lock" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
                                             </a>
                                         </li>
@@ -57,16 +67,10 @@
                                 {% endblock %}
 
                                 <li>
-                                    <a href="{{ path('blog_search') }}"> <i class="fa fa-search"></i> {{ 'menu.search'|trans }}</a>
+                                    <a href="{{ path('search_software') }}"> <i class="fa fa-search"></i> {{ 'menu.search'|trans }}</a>
                                 </li>
 
-                                {% if app.user %}
-                                    <li>
-                                        <a href="{{ path('security_logout') }}">
-                                            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'menu.logout'|trans }}
-                                        </a>
-                                    </li>
-                                {% endif %}
+
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="locales">
@@ -90,21 +94,25 @@
         <div class="container body-container">
             {% block body %}
                 <div class="row">
+                    <div id="sidebar" class="col-sm-3">
+                       {% block sidebar %}
+                           {{ include('admin/_side_menu.html.twig') }}
+                        {#
+                         {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
+                             'template': 'blog/about.html.twig',
+                             'sharedAge': 600,
+                             '_locale': app.request.locale
+                         })) }}
+                         #}
+                     {% endblock %}
+                    </div>
+
                     <div id="main" class="col-sm-9">
                         {{ include('default/_flash_messages.html.twig') }}
 
                         {% block main %}{% endblock %}
                     </div>
 
-                    <div id="sidebar" class="col-sm-3">
-                        {% block sidebar %}
-                            {{ render_esi(controller('Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController::templateAction', {
-                                'template': 'blog/about.html.twig',
-                                'sharedAge': 600,
-                                '_locale': app.request.locale
-                            })) }}
-                        {% endblock %}
-                    </div>
                 </div>
             {% endblock %}
         </div>
@@ -120,14 +128,17 @@
                         <div id="footer-resources" class="col-md-6">
                             {#Update to krisp handles#}
                             <p>
-                                <a href="https://twitter.com/symfony" title="Symfony Twitter">
+                                <a href="https://twitter.com/krisp_news" title="KRISP Twitter">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.facebook.com/SensioLabs" title="SensioLabs Facebook">
+                                <a href="https://www.facebook.com/KRISP" title="KRISP Facebook">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://symfony.com/blog/" title="Symfony Blog">
-                                    <i class="fa fa-rss" aria-hidden="true"></i>
+                                <a href="https://www.youtube.com/user/bioafricaSATURN" title="KRISP Youtube">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://plus.google.com/+TuliodeOliveiraKRISP" title="KRISP Youtube">
+                                    <i class="fa fa-google-plus" aria-hidden="true"></i>
                                 </a>
                             </p>
                         </div>
