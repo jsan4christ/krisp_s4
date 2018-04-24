@@ -33,7 +33,7 @@ class User implements UserInterface, \Serializable
      * @var int
      *
      * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -54,8 +54,8 @@ class User implements UserInterface, \Serializable
 
     /**
      * @var string
-     *
-     * @ORM\Column(type="string", unique=true)
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 

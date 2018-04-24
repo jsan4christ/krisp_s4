@@ -11,6 +11,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\UserRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -66,4 +67,33 @@ class TeamController extends AbstractController
         ]);
     }
 
+    /**
+     * @route("/update_admin/{admin_id}", name="update_profile")
+     */
+    public function update_admin(Request $request, $admin_id, UserPasswordEncoderInterface $pe)
+    {
+        $em = $this->getDoctrine();
+        $admin = $em->getRepository(User::class)->find($admin_id);
+
+        $form = $this->createForm(UserType::class, $admin);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $password = $pe->encodePassword($admin, $admin->getPlainPassword());
+            $admin->setPassword($password);
+
+            $em->getManager()->flush();
+
+            $this->addFlash('success', 'Details updated successfully');
+
+            return $this->redirectToRoute('admin_index');
+        }
+
+        return $this->render('admin/team/update_profile.html.twig', [
+            'admin' => $admin,
+            'form' => $form->createView()
+        ]);
+    }
 }

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body_id 'view_software' %}
 
@@ -30,11 +30,6 @@
 {% endblock %}
 
 {% block sidebar %}
-    <div class="section">
-        <a href="{{ path('add_software') }}" class="btn btn-success btn-block btn-lg">
-            <i class="fa fa-plus"></i>Add Software
-        </a>
-    </div>
 
     {{ parent() }}
 {% endblock %}

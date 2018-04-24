@@ -1,12 +1,57 @@
-<div class="card">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a href="#" >Admin</a></li>
-        <li class="list-group-item"><a href="#" >Manage Team</a></li>
-        <li class="list-group-item"><a href="{{ path('get_pub_details') }}" >Manage Publications</a></li>
-        <li class="list-group-item"><a href="{{ path('view_software') }}" >Manage Software</a></li>
-        <li class="list-group-item"><a href="{{ path('view_cats') }}" >Manage Categories</a></li>
-        <li class="list-group-item"><a href="{{ path('view_subcats') }}" >Manage Subategories</a></li>
-        <li class="list-group-item"><a href="{{ path('show_servers') }}" >Manage Servers</a></li>
-        <li class="list-group-item"><a href="#" >Manage Software Commands</a></li>
-    </ul>
+<div class="gw-sidebar">
+    <div id="gw-sidebar" class="gw-sidebar">
+        <div class="nano-content">
+            <h4>Navigation</h4>
+            <ul class="gw-nav gw-nav-list">
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Admin</span> <b class="gw-arrow"></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="javascript:void(0)">View Profile</a> </li>
+                        <li> <a href="{{ path('update_profile', {admin_id:  app.user.id}) }}">Upate Profile</a> </li>
+                        <li> <a href="{{ path('reg_admin') }}">Register Admin</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Team</span> <b class="gw-arrow icon-arrow-up8"></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="javascript:void(0)">View Team Members</a> </li>
+                        <li> <a href="javascript:void(0)">Add Team Members</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Software</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('view_software') }}">View Installed Software</a> </li>
+                        <li> <a href="{{ path('add_software') }}">Add New Software</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Categories</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('view_cats') }}">View Software Categories</a> </li>
+                        <li> <a href="{{ path('add_cat') }}">Add Software Category 2</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Subcategories</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('view_subcats') }}">View Software Subcategories</a> </li>
+                        <li> <a href="{{ path('add_subcat') }}">Add Software Subcategory</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Servers</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('show_servers') }}">View Servers</a> </li>
+                        <li> <a href="{{ path('add_server') }}">Add Server</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Experts</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('view_experts') }}">View Software Experts</a> </li>
+                        <li> <a href="{{ path('add_expert') }}">Add Software Experts</a> </li>
+                    </ul>
+                </li>
+                <li class="init-arrow-down"> <a href="javascript:void(0)"> <span class="gw-menu-text">Manage Publications</span> <b></b> </a>
+                    <ul class="gw-submenu">
+                        <li> <a href="{{ path('add_missing_issns') }}">Update ISSNs</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

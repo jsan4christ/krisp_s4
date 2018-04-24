@@ -1,9 +1,9 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'reg_admin' %}
+{% block body_id 'update_profile' %}
 
 {% block main %}
-    <h1>Register Admin</h1>
+    <h1>Update Profile</h1>
 
     {{ form_start(form) }}
         {{ form_row(form.fullName) }}
@@ -13,17 +13,14 @@
         {{ form_row(form.plainPassword.second) }}
         {{ form_row(form.roles) }}
 
-        <button type="submit" class="btn-success">
-            <label>Register Admin</label> <i class="fa fa-plus" aria-hidden="true"></i>
+        <button type="submit" class="btn-link">
+            <label>
+                Update Profile
+            </label> <i class="fa fa-edit" aria-hidden="true"></i>
         </button>
     {{ form_end(form) }}
 {% endblock %}
 
 {% block sidebar %}
-    <div class="section">
-        <a href="{{ path('update_profile', {admin_id : app.user.id}) }}" class="btn-link btn-success btn-primary btn">
-            Update Profile
-        </a>
-    </div>
     {{ parent() }}
 {% endblock %}

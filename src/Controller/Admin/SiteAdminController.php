@@ -80,7 +80,7 @@ class SiteAdminController extends AbstractController
     /**
      * Add software expert
      *
-     * @route("/add_expert")
+     * @route("/add_expert", name="add_expert")
      */
     public  function add_expert()
     {

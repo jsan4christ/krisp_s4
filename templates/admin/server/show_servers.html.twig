@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body_id 'show_servers' %}
 {% block main %}
@@ -26,10 +26,6 @@
 
 {% endblock %}
 {% block sidebar %}
-    <div class="section">
-        <a href="{{ path('add_server') }}" class="btn btn-lg btn-block btn-success">
-            <label for="add_server">Add New Server</label> <i class="fa fa-plus" aria-hidden="true"></i>
-        </a>
-    </div>
+
     {{ parent() }}
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body_id 'view_detail' %}
 
@@ -14,7 +14,7 @@
 {% block sidebar %}
     <div class="section">
        <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-lg btn-block btn-success">
-            <i class="fa fa-edit" aria-hidden="true"></i>Edit Software
+            <i class="fa fa-edit" aria-hidden="true"></i>Edit {{ software.swName }}
        </a>
     </div>
 

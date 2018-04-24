@@ -2,6 +2,7 @@ import 'eonasdan-bootstrap-datetimepicker';
 import 'typeahead.js';
 import Bloodhound from "bloodhound-js";
 import 'bootstrap-tagsinput';
+import './leftNav.js';
 
 $(function() {
     // Datetime picker initialization.
@@ -60,4 +61,15 @@ $(document).on('submit', 'form[data-confirmation]', function (event) {
             })
             .modal('show');
     }
+});
+
+$(document).ready(function() {
+    $("#my-menu").mmenu({
+        // options
+    }, {
+        // configuration
+        offCanvas: {
+            pageSelector: "#body_id"
+        }
+    });
 });
