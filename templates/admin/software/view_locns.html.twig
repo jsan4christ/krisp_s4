@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body_id 'view_locns' %}
 
@@ -13,6 +13,7 @@
                 <th scope="col">Install Date</th>
                 <th scope="col">Instructions to Access</th>
                 <th scope="col">Instruction to Req. Access</th>
+                <th>Edit</th>
             </tr>
         </thead>
         {% for locn in locns %}
@@ -23,14 +24,11 @@
                 <td>{{ locn.installDate | date('Y-m-d')}}</td>
                 <td>{{ locn.howToLoad }}</td>
                 <td>{{ locn.howToUnload }}</td>
+                <td><a href="{{ path('update_locn', {locnId : locn.id}) }}" class="btn-link"><i class="fa fa-edit"></i></a></td>
             </tr>
         {% endfor %}
     </table>
 {% endblock %}
 {% block sidebar %}
-    <div class="section">
-        <a href="{{ path('add_locn') }}" class="btn-block btn-success btn-lg">
-            <label>Add New Location</label> <i class="fa fa-plus" aria-hidden="true"></i>
-        </a>
-    </div>
+   {{ parent() }}
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 /**
  * BSwInstLocn
@@ -78,12 +80,11 @@ class BSwInstLocn
         return $this->software;
     }
 
-    /**
-     * @param int $software
-     */
-    public function setSoftware(int $software)
+
+    public function setSoftware(BInstalledSw $software = null)
     {
         $this->software = $software;
+        return $this;
     }
 
     public function getServer()
@@ -91,12 +92,10 @@ class BSwInstLocn
         return $this->server;
     }
 
-    /**
-     * @param int $server
-     */
-    public function setServer(int $server)
+    public function setServer(BServer $server = null)
     {
         $this->server = $server;
+        return $this;
     }
 
     /**
@@ -162,7 +161,6 @@ class BSwInstLocn
     {
         $this->howToUnload = $howToUnload;
     }
-
 
 }
 

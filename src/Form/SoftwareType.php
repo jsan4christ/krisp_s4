@@ -15,6 +15,7 @@ use App\Entity\BSwSubcat;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,7 +25,7 @@ class SoftwareType extends AbstractType
     {
         $builder->add('swName', TextType::class)
                 ->add('swDesc', TextType::class)
-                ->add('swUrl', TextType::class)
+                ->add('swUrl', UrlType::class)
                 ->add('category', EntityType::class,[
                         'class' => BSwCat::class,
                         'choice_label' => 'catName',

@@ -148,7 +148,7 @@ class BlogController extends AbstractController
      * @Route("/search", name="blog_search")
      * @Method("GET")
      */
-    public function search(Request $request, PostRepository $posts): Response
+    public function search(Request $request, PostRepository $posts): Res
     {
         if (!$request->isXmlHttpRequest()) {
             return $this->render('blog/search.html.twig');

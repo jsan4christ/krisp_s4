@@ -42,13 +42,12 @@ webpackJsonp([5],{
         delay: 500,
         noResultsMessage: 'No results found',
         itemTemplate: '\
-                <article class="post">\
-                    <h2><a href="{{ url }}">{{ title }}</a></h2>\
-                    <p class="post-metadata">\
-                       <span class="metadata"><i class="fa fa-calendar"></i> {{ date }}</span>\
-                       <span class="metadata"><i class="fa fa-user"></i> {{ author }}</span>\
+                <article class="sw">\
+                    <h2><a href="{{ url }}">{{ swName }}</a></h2>\
+                    <p class="sw-metadata">\
+                       <span class="metadata"><i class="fa fa-plus"></i> {{ category }} / {{ subcategory }}</span>\
                     </p>\
-                    <p>{{ summary }}</p>\
+                    <p>{{ swDesc }}</p>\
                 </article>'
     };
 

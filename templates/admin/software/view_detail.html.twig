@@ -10,12 +10,58 @@
 
     <p>Description: {{ software.swDesc }}</p>
 
+    <h4>Experts:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Expert Name</th>
+                <th>Expert Email</th>
+            </tr>
+        </thead>
+        {% for exp in expertise %}
+            <tr>
+                <td>{{ exp.person.name }}</td>
+                <td>{{ exp.person.email }}</td>
+                <td>{{ exp.type }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h4>Locations:</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Server</th>
+                    <th>Server URL</th>
+                    <th>Server IP</th>
+                    <th>Install Location</th>
+                    <th>Install Date</th>
+                </tr>
+            </thead>
+            {% for locn in locations %}
+                <tr>
+                    <td>{{ locn.server.svrName }}</td>
+                    <td>{{ locn.server.svrAddr }}</td>
+                    <td>{{ locn.server.svrIp }}</td>
+                    <td>{{ locn.installLocn }}</td>
+                    <td>{{ locn.installDate | date("Y-m-d") }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
 {% endblock %}
 {% block sidebar %}
     <div class="section">
-       <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-lg btn-block btn-success">
+       <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-sm btn-block btn-success">
             <i class="fa fa-edit" aria-hidden="true"></i>Edit {{ software.swName }}
        </a>
+        <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-sm btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i>Add Expert
+        </a>
+
+        <a href="{{ path('update_software', {sw_id: software.swId}) }}" class="btn btn-sm btn-block btn-success">
+            <i class="fa fa-edit" aria-hidden="true"></i>Add Location
+        </a>
     </div>
 
     {{ parent() }}

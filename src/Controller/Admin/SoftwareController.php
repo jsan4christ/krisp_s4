@@ -8,12 +8,19 @@
 
 namespace App\Controller\Admin;
 
-
+use App\Entity\BServer;
+use App\Entity\BSwExpert;
 use App\Entity\BInstalledSw;
 use App\Entity\BSwInstLocn;
+use App\Entity\BPeople;
 use App\Form\LocationType;
 use App\Form\SoftwareType;
+use App\Form\ServerType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Repository\BSwExpertRepository;
 use App\Repository\SoftwareRepository;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,6 +28,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
 /**
  * Class SoftwareController
@@ -69,35 +79,42 @@ class SoftwareController extends AbstractController
     public function view_detail($sw_id){
         $em = $this->getDoctrine()->getManager();
         $software = $em->getRepository(BInstalledSw::class)->find($sw_id);
-       // $cat = $software->getCategory();
-       // dump($software);
-        //dump($cat);
+
+        $expertise = $software->getExperts();
+
+        $locations = $software->getLocations();
 
         return $this->render('admin/software/view_detail.html.twig', [
-            'software' => $software
+            'software' => $software,
+            'expertise' => $expertise,
+            'locations' => $locations
         ]);
     }
 
     /**
      * Add software
-     * @route("/add", name="add_software")
+     * @route("/new", name="add_software")
      */
     public function new(Request $request): Response
     {
         $software = new BInstalledSw();
 
-        $form = $this->createForm(SoftwareType::class, $software);
+        $form = $this->createForm(SoftwareType::class, $software)
+            ->add('saveAndCreateNew', SubmitType::class);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            dump($form);
             $em = $this->getDoctrine()->getManager();
             $em->persist($software);
             $em->flush();
 
             $this->addFlash('success', 'Software successfully inserted into database');
 
-            return $this->redirectToRoute('view_software');
+            $nextAction = $form->get('saveAndCreateNew')->isClicked() ? 'add_software' : 'view_software';
+
+            return $this->redirectToRoute($nextAction);
         }
 
         return $this->render('admin/software/add_software.html.twig',[
@@ -133,7 +150,43 @@ class SoftwareController extends AbstractController
         ]);
     }
 
-    ///Software Locations
+
+
+    /**
+     * @route("/search", name="search_software")
+     * @Method("GET")
+     */
+
+    public function search_sw(Request $request, SoftwareRepository $sr): Response
+    {
+        if(!$request->isXmlHttpRequest()){
+            return $this->render('admin/software/search.html.twig');
+        }
+
+        $query = $request->query->get('q', '');
+        $limit = $request->query->get('l', '10');
+
+        $foundSw = $sr->findBySearchQuery($query, $limit);
+
+        dump($foundSw);
+        $results = [];
+        foreach ($foundSw as $sw){
+            $results[] = [
+
+                'swName' => htmlspecialchars($sw->getSwName()),
+                'swDesc' => htmlspecialchars($sw->getSwDesc()),
+                'category' => htmlspecialchars($sw->getCategory()->getCatName()),
+                'subcategory' =>htmlspecialchars($sw->getSubcategory()->getSubcatName()),
+                'url' => $this->generateUrl('view_detail', ['sw_id' => $sw->getSwId()])
+            ];
+
+        }
+        return $this->json($results);
+    }
+
+    ###############################End Manage Software######################################
+
+    ############################Been Manage Software Locations###############################
     /**
      * @route("/view_locns", name="view_locns")
      */
@@ -174,35 +227,271 @@ class SoftwareController extends AbstractController
             ]);
         }
 
+    /**
+     * @route("update_locn/{locnId}", name="update_locn")
+     */
+    public function update_locn(Request $request ,$locnId)
+    {
+       $em = $this->getDoctrine()->getManager();
 
-        /**
-         * @route("/search", name="search_software")
-         * @Method("GET")
-         */
+       $locn = $em->find(BSwInstLocn::class, $locnId);
 
-        public function search_sw(Request $request, SoftwareRepository $sr)
-        {
-            if(!$request->isXmlHttpRequest()){
-                return $this->render('admin/software/search.html.twig');
-            }
+       $form = $this->createForm(LocationType::class, $locn);
 
-            $query = $request->query->get('q', '');
-            //dump($query);
-            $limit = $request->query->get('l', '10');
+       $form->handleRequest($request);
 
-            $foundSw = $sr->findBySearchQuery($query, $limit);
-            dump($foundSw);
-            $results = [];
-            foreach ($foundSw as $sw){
-                $results[] = [
-                    'sw_name' => htmlspecialchars($sw->getSwName()),
-                    'sw_url' => htmlspecialchars($sw->getSwUrl()),
-                    'sw_desc' => htmlspecialchars($sw->getSwDesc()),
-                    'category' => htmlspecialchars($sw->getCategory()->getCatName()),
-                    'subcategory' =>htmlspecialchars($sw->getSubcategory()->getSubcatName())
-                ];
+       if($form->isSubmitted() && $form->isValid())
+       {
+           $em->flush();
 
-                dump($results);
-            }
-        }
+           $this->addFlash('success', 'Location updated');
+
+           return $this->redirectToRoute('view_locns');
+       }
+
+       return $this->render('admin/software/update_locn.html.twig', [
+           'locn' => $locn,
+           'form' => $form->createView(),
+       ]);
     }
+
+    /**
+     * @route("/delete_locn/{locnId}", name="delete_locn")
+     */
+    public function delete_locn($locnId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $locn = $em->find(BSwInstLocn::class, $locnId);
+
+        $em->remove($locn);
+        $em->flush();
+
+        return $this->redirectToRoute('view_locns');
+    }
+    #########################End Manage Software Locations#####################
+
+    #########################Begin Manage Experts##############################
+
+    /**
+     * View logged in user profile
+     *
+     * @route("/view_experts", name="view_experts")
+     */
+    public function view_experts(BSwExpertRepository $expert)
+    {
+        $experts = $expert->findAll();
+
+        return $this->render('admin/software/view_experts.html.twig', [
+            'experts'=> $experts
+        ]);
+    }
+
+    /**
+     * Add software expert
+     *
+     * @route("/add_expert", name="add_expert")
+     * @route("/add_expert/{swId}", name="add_exp_for_sw")
+     */
+    public  function add_expert(Request $request)
+    {   //$uuid5 = Uuid::uuid5(Uuid::NAMESPACE_DNS, 'krisp.org.za');
+        //dump($uuid5->toString()); die;
+
+        //get doctrine entity manager object
+        $em = $this->getDoctrine()->getManager();
+
+        $expertArray = array('message' => 'Fill in Expert Details');
+
+        $form = $this->createFormBuilder($expertArray)
+            ->add('person',EntityType::class, [
+                'class' => BPeople::class,
+                'choice_label' => 'name',
+                'multiple' => false,
+                'expanded' => false,
+            ])
+
+            ->add('type',ChoiceType::class, [
+                'choices' => [
+                    'Expert User' => 'Expert User',
+                    'Expert Installer' => 'Expert Installer',
+                    'Both' => 'Both',
+                ]
+            ])
+            ->add('software', EntityType::class, [
+                'class' => BInstalledSw::class,
+                'choice_label' => 'swName',
+                'multiple' => false,
+                'expanded' => false
+            ])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+
+        //process expert form if submitted
+        if($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $expert = new BSwExpert();
+            try{
+                $expert->setId(Uuid::uuid5(Uuid::NAMESPACE_DNS, 'krisp.org.za'));
+                } catch (UnsatisfiedDependencyException $e){
+                throw new HttpException(500, 'Caught Exception'.$e->getMessage());
+            }
+
+            $person = $data['person'];
+            $software = $data['software'];
+
+            $expert->setPerson($person);
+            $expert->setSoftware($software);
+
+            $expert->setType($data['type']);
+
+            //dump($expert);die;
+            //tell doctrine you want to save an expert
+            $em->persist($expert);
+
+            //save the expert in the database
+            $em->flush();
+
+            $this->addFlash('success', 'Expert Added');
+
+            return $this->redirectToRoute('view_experts');
+        }
+
+        return $this->render('admin/software/add_expert.html.twig',[
+            'expert' => $expertArray,
+            'form' => $form->createView(),
+        ]);
+
+    }
+
+
+    /**
+     * @route("/update_expert/{eid}", name="update_expert")
+     */
+    public  function edit_expert($eid)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $expert = $em->find(BSwExpert::class, $eid);
+        dump($expert->getId());die;
+
+    }
+    ######################End Software experts######################
+
+
+    ######################Begin Manage Server#######################
+    /**
+     * Creates a new server entity.
+     *
+     * @Route("/add_server", name="add_server")
+     * @Method({ "POST", "GET"})
+     *
+     */
+    public function add_server(Request $request): Response
+    {
+        //$this->denyAccessUnlessGranted('edit', $server, 'You do not have permission to add server');
+
+        $server = new BServer();
+
+        $form = $this->createForm(ServerType::class, $server); //create a form
+
+        $form->handleRequest($request); //make sure it is valid
+
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($server);
+            $em->flush();
+
+            $this->addFlash('success', 'Server added successefully');
+
+
+            return $this->redirectToRoute('view_servers');
+        }
+
+        return $this->render('admin/software/add_server.html.twig', [
+            'server' => $server,
+            'form' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * Show all servers
+     *
+     * @route("/view_servers", name="view_servers")
+     */
+    public function view_servers()
+    {
+        $servers = $this->getDoctrine()
+            ->getRepository('App:BServer')
+            ->findAll();
+
+        return $this->render('admin/software/view_servers.html.twig', [
+            'servers' => $servers
+        ]);
+    }
+
+    /**
+     * update server details
+     *
+     * @route("/update_server/{svr_id}/edit", name="update_server", requirements={"id": "\d+"})
+     * @Method({"GET", "POST"})
+     */
+    public function update_server(Request $request, $svr_id): Response
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $server = $em->getRepository(BServer::class)->find($svr_id);
+
+        if(!$server){
+            throw $this->createNotFoundException(
+                'No server found with id '.$svr_id
+            );
+        }
+
+        $form = $this->createForm(ServerType::class, $server);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            #$this->getDoctrine()->getManager()->flush();
+            $em->flush();
+
+            $this->addFlash('success', 'Server updated successfuly');
+
+            return $this->redirectToRoute('update_server', ['svr_id' => $server->getSvrId()]);
+        }
+
+        return $this->render('admin/software/update_server.html.twig', [
+            'server' => $server,
+            'form' => $form->createView(),
+        ]);
+
+    }
+
+    /**
+     * delete server details
+     *
+     * @route("/delete_server/{svr_id}", name="delete_server", requirements={"page"="\d+"})
+     * @Method("POST")
+     * @Security("is_granted('delete', server)")
+     */
+    public function delete_server(Request $request, BServer $server)
+    {
+        if($this->isCsrfTokenValid('delete', $request->request->get('token'))){
+            return $this->redirectToRoute('admin_index');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $em->remove($server);
+
+        $this->addFlash('success', 'Server deleted successfuly');
+
+        return $this->redirectToRoute('admin_index');
+    }
+
+    ##################End Servers###########################
+
+}

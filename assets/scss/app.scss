@@ -328,3 +328,24 @@ body#blog_search .post-metadata {
   font-size: 16px;
   margin-bottom: 8px;
 }
+
+
+/* Page: 'software search'
+   ------------------------------------------------------------------------- */
+body#software_search #main h1,
+body#software_search #main p {
+  margin-bottom: 0.5em
+}
+
+body#software_search article.sw:first-child {
+  margin-top: 2em;
+}
+
+body#software_search article.sw {
+  margin-bottom: 2em;
+}
+
+body#software_search .sw-metadata {
+  font-size: 16px;
+  margin-bottom: 8px;
+}

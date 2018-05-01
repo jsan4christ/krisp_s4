@@ -114,13 +114,10 @@ class BPeople
 
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="person", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="person", cascade={"persist", "remove"}, orphanRemoval=TRUE)
      */
     protected $expertise;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\BInstalledSw", mappedBy="software", cascade={"persist"}
-     */
 
     /**
      * BPeople constructor.
@@ -136,22 +133,246 @@ class BPeople
         return $this->expertise->toArray();
     }
 
-    public function addExpertise(Expertise_ $expertise_)//using expertise_ for each expertise an individual has
+    public function addExpertise(BSwExpert $expertise)//using expertise_ for each expertise an individual has
     {
-        if (!$this->expertise->contains($expertise_)) {
-            $this->expertise->add($expertise_);
-            $expertise_->setBPeople($this);
+        if (!$this->expertise->contains($expertise)) {
+            $this->expertise->add($expertise);
+            $expertise->setPerson($this);
         }
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelephone(): string
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * @param string $telephone
+     */
+    public function setTelephone(string $telephone)
+    {
+        $this->telephone = $telephone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFax(): string
+    {
+        return $this->fax;
+    }
+
+    /**
+     * @param string $fax
+     */
+    public function setFax(string $fax)
+    {
+        $this->fax = $fax;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSummary(): string
+    {
+        return $this->summary;
+    }
+
+    /**
+     * @param string $summary
+     */
+    public function setSummary(string $summary)
+    {
+        $this->summary = $summary;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage(string $image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSummary2(): string
+    {
+        return $this->summary2;
+    }
+
+    /**
+     * @param string $summary2
+     */
+    public function setSummary2(string $summary2)
+    {
+        $this->summary2 = $summary2;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSurname(): string
+    {
+        return $this->surname;
+    }
+
+    /**
+     * @param string $surname
+     */
+    public function setSurname(string $surname)
+    {
+        $this->surname = $surname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInitials(): string
+    {
+        return $this->initials;
+    }
+
+    /**
+     * @param string $initials
+     */
+    public function setInitials(string $initials)
+    {
+        $this->initials = $initials;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto2(): string
+    {
+        return $this->photo2;
+    }
+
+    /**
+     * @param string $photo2
+     */
+    public function setPhoto2(string $photo2)
+    {
+        $this->photo2 = $photo2;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBioafricasaturn(): int
+    {
+        return $this->bioafricasaturn;
+    }
+
+    /**
+     * @param int $bioafricasaturn
+     */
+    public function setBioafricasaturn(int $bioafricasaturn)
+    {
+        $this->bioafricasaturn = $bioafricasaturn;
+    }
+
+    /**
+     * @param mixed $expertise
+     */
+    public function setExpertise($expertise)
+    {
+        $this->expertise = $expertise;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMember(): string
+    {
+        return $this->member;
+    }
+
+    /**
+     * @param string $member
+     */
+    public function setMember(string $member)
+    {
+        $this->member = $member;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategory(): string
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param string $category
+     */
+    public function setCategory(string $category)
+    {
+        $this->category = $category;
     }
 
 
     public function getSoftwareDetails()
     {
         return array_map(
-            function ($expertise_) {//using expertise_ for each expertise an individual has
-                return $expertise_->getBInstalledSw();
+            function ($expertise) {//using expertise_ for each expertise an individual has
+                return $expertise->getSoftware();
             },
             $this->expertise->toArray()
         );

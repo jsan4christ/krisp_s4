@@ -22,18 +22,13 @@ class ExpertType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('expert',EntityType::class, [
+        $builder->add('person',EntityType::class, [
                     'class' => BPeople::class,
                     'choice_label' => 'name',
                     'multiple' => false,
                     'expanded' => false
-        ])
-                ->add('software', EntityType::class, [
-                    'class' => BInstalledSw::class,
-                    'choice_label' => 'swName',
-                    'multiple' => false,
-                    'expanded' => false
-         ])
+                 ])
+
                 ->add('type',ChoiceType::class, [
                     'choices' => [
                         'Expert User',
@@ -41,12 +36,18 @@ class ExpertType extends AbstractType
                         'Both'
                     ]
                 ])
-            ;
+                ->add('software', EntityType::class, [
+                    'class' => BInstalledSw::class,
+                    'choice_label' => 'swName',
+                    'multiple' => false,
+                    'expanded' => false
+                ])
+                ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefault([
+        $resolver->setDefaults([
             'data_class' => BSwExpert::class
         ]);
     }

@@ -58,24 +58,21 @@ class SoftwareRepository extends ServiceEntityRepository
     public function findBySearchQuery(string $rawQuery, int $limit = BInstalledSw::NUM_ITEMS): array
     {
         $query = $this->sanitizeSearchQuery($rawQuery);
-        //dump($query);
         $searchTerms = $this->extractSearchTerms($query);
-        //dump($searchTerms);
+
         if(0 === count($searchTerms)){
             return [];
         }
 
         $queryBuilder = $this->createQueryBuilder('s');
-
         foreach ($searchTerms as $key => $term) {
             $queryBuilder
                 ->orWhere('s.swName LIKE :t_'.$key)
                 ->setParameter('t_'.$key, '%'.$term.'%')
                 ;
         }
-
         return $queryBuilder
-                    ->orderBy('p.swName', 'DESC')
+                    ->orderBy('s.swName', 'DESC')
                     ->setMaxResults($limit)
                     ->getQuery()
                     ->getResult();

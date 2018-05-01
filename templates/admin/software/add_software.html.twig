@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
 
 {% block body_id 'add_software' %}
     {% block main %}
@@ -9,6 +9,17 @@
             {{ form_row(form.category) }}
             {{ form_row(form.subcategory) }}
 
-            <input type="submit" class="btn btn-default pull-right" value="Add Software">
+        <button type="submit" class="btn btn-default pull-right" value="save">
+            <label>Add Software</label>
+        </button>
+        {{ form_widget(form.saveAndCreateNew, {label: 'label.save_and_create_new', attr: {class: 'btn btn-primary'}}) }}
+
         {{ form_end(form) }}
     {% endblock %}
+
+{#<button type="submit" class="btn btn-default pull-right" value="save">
+            <label>Add Software</label>
+        </button>
+        <button type="submit" class="btn btn-default pull-left" value="saveAndAdd">
+            <label>Save Add Software</label>
+        </button>#}

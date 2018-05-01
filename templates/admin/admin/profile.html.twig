@@ -1,0 +1,18 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'profile' %}
+
+{% block main %}
+    <h1>Account Details</h1>
+
+    <h3>{{ profile.fullName }}</h3>
+
+    <p>{{ profile.username }}</p>
+
+    <p>{{ profile.email }}</p>
+
+    <p>{% for role in profile.roles %}
+            {{ role }} <br />
+       {% endfor %}
+    </p>
+{% endblock %}

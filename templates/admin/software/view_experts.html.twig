@@ -1,0 +1,25 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'add_expert' %}
+
+{% block main %}
+    <h1>Software Experts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Click to Edit</th>
+                <th>Software Name</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        {% for expert in experts %}
+            <tr>
+                <td><a href="{{ path('update_expert', {eid : expert.id}) }}">{{ expert.person.name }}</a></td>
+                <td>{{ expert.software.swName }}</td>
+                <td>{{ expert.type }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

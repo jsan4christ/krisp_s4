@@ -8,16 +8,18 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\BServer;
-use App\Entity\BSwExpert;
-use App\Form\ServerType;
-use App\Repository\BSwExpertRepository;
+
+
+use App\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use App\Form\UserType;
 /**
  * Class SiteAdminController
  * @package App\Controller\Admin
@@ -44,176 +46,88 @@ class SiteAdminController extends AbstractController
     ########################Begin Manage Own Profile###################
 
     /**
-     * View logged in user profile
+     * View logged in user profile. Should only view own profile.
      *
-     * @route("/my_profile", name="my_profile")
+     * @route("/profile/{id}", name="logged_admin_in_profile")
      */
-    public function my_profile(BSwExpertRepository $expert)
+    public function my_profile( int $id)
     {
-        $experts = $expert->find();
-
-        return $this->render('admin/user/my_profile.html.twig', [
-            'experts'=> $experts
-        ]);
-    }
-    ########################End Manage Own Profile######################
-
-    ########################Begin Manage Experts###################
-
-    /**
-     * View logged in user profile
-     *
-     * @route("/view_experts", name="view_experts")
-     */
-    public function view_experts(BSwExpertRepository $expert)
-    {
-        $experts = $expert->findAll();
-
-        return $this->render('admin/view_experts.html.twig', [
-            'experts'=> $experts
-        ]);
-    }
-    ########################End Manage Own Profile######################
-
-
-    ########################Begin software experts###############
-    /**
-     * Add software expert
-     *
-     * @route("/add_expert", name="add_expert")
-     */
-    public  function add_expert()
-    {
-        $expert = new BSwExpert(2, 4);
-        $expert->setType("Both");
-
-        //get doctrine entity manager object
-        $em = $this->getDoctrine()->getManager();
-
-        //tell doctrine you want to save an expert
-        $em->persist($expert);
-
-        //save the expert in the database
-        $em->flush();
-
-        return new Response('New expert added'.$expert->getId());
-
-    }
-    ######################End software experts######################
-
-
-    /**
-     * Creates a new server entity.
-     *
-     * @Route("/add_server", name="add_server")
-     * @Method({ "POST", "GET"})
-     *
-     */
-    public function new(Request $request): Response
-    {
-        //$this->denyAccessUnlessGranted('edit', $server, 'You do not have permission to add server');
-
-        $server = new BServer();
-
-        $form = $this->createForm(ServerType::class, $server); //create a form
-
-        $form->handleRequest($request); //make sure it is valid
-
-
-        if($form->isSubmitted() && $form->isValid())
-        {
+        $loggedInUser = $this->getUser()->getId();
+        if($id === $loggedInUser){
             $em = $this->getDoctrine()->getManager();
-            $em->persist($server);
-            $em->flush();
-
-            $this->addFlash('success', 'Server added successefully');
-
-
-            return $this->redirectToRoute('show_servers');
+            $profile = $em->find(User::class, $id);
+        }else{
+            $this->addFlash('warning', 'You tried to view a profile that is not yours, please login to view your profile!');
+            return $this->redirectToRoute('security_login');
         }
 
-        return $this->render('admin/server/add_server.html.twig', [
-            'server' => $server,
-            'form' => $form->createView(),
-        ]);
-
-    }
-
-    /**
-     * Show all servers
-     *
-     * @route("/show_servers", name="show_servers")
-     */
-    public function show_servers()
-    {
-        $servers = $this->getDoctrine()
-            ->getRepository('App:BServer')
-            ->findAll();
-
-        return $this->render('admin/server/show_servers.html.twig', [
-            'servers' => $servers
+        return $this->render('admin/admin/profile.html.twig', [
+            'profile'=> $profile,
         ]);
     }
 
     /**
-     * update server details
-     *
-     * @route("/update_server/{svr_id}/edit", name="update_server", requirements={"id": "\d+"})
-     * @Method({"GET", "POST"})
+     * @route("/reg_admin", name="reg_admin")
+     * @Method({"POST", "GET"})
      */
-    public function update_server(Request $request, $svr_id): Response
+    public  function reg_admin(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $em = $this->getDoctrine()->getManager();
+        $admin = new User();
+        $form = $this->createForm(UserType::class, $admin);
 
-        $server = $em->getRepository(BServer::class)->find($svr_id);
-
-        if(!$server){
-            throw $this->createNotFoundException(
-                'No server found with id '.$svr_id
-            );
-        }
-
-        $form = $this->createForm(ServerType::class, $server);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            #$this->getDoctrine()->getManager()->flush();
+            $password = $passwordEncoder->encodePassword($admin, $admin->getPlainPassword());
+            $admin->setPassword($password);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($admin);
             $em->flush();
 
-            $this->addFlash('success', 'Server updated successfuly');
+            //add here code to send confirmation email to user
 
-            return $this->redirectToRoute('update_server', ['svr_id' => $server->getSvrId()]);
-        }
+            $this->addFlash('success', 'Admin added!');
 
-        return $this->render('admin/server/update_server.html.twig', [
-            'server' => $server,
-            'form' => $form->createView(),
-        ]);
-
-    }
-
-    /**
-     * delete server details
-     *
-     * @route("/delete_server/{svr_id}", name="delete_server", requirements={"page"="\d+"})
-     * @Method("POST")
-     * @Security("is_granted('delete', server)")
-     */
-    public function delete_server(Request $request, BServer $server)
-    {
-        if($this->isCsrfTokenValid('delete', $request->request->get('token'))){
             return $this->redirectToRoute('admin_index');
         }
 
-        $em = $this->getDoctrine()->getManager();
-
-        $em->remove($server);
-
-        $this->addFlash('success', 'Server deleted successfuly');
-
-        return $this->redirectToRoute('admin_index');
+        return $this->render('admin/admin/reg_admin.html.twig',[
+            'admin' => $admin,
+            'form' => $form->createView(),
+        ]);
     }
 
-    ##################End Server Routes###########################
+    /**
+     * @route("/update_admin/{admin_id}", name="update_profile")
+     */
+    public function update_admin(Request $request, $admin_id, UserPasswordEncoderInterface $pe)
+    {
+        $em = $this->getDoctrine();
+        $admin = $em->getRepository(User::class)->find($admin_id);
+
+        $form = $this->createForm(UserType::class, $admin);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $password = $pe->encodePassword($admin, $admin->getPlainPassword());
+            $admin->setPassword($password);
+
+            $em->getManager()->flush();
+
+            $this->addFlash('success', 'Details updated successfully');
+
+            return $this->redirectToRoute('admin_index');
+        }
+
+        return $this->render('admin/admin/update_profile.html.twig', [
+            'admin' => $admin,
+            'form' => $form->createView()
+        ]);
+    }
+    ########################End Manage Own Profile######################
+
 }
 

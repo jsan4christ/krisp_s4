@@ -29,7 +29,7 @@ class BInstalledSw
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="sw_name", type="string", length=50, nullable=false)
      */
     private $swName;
@@ -67,14 +67,14 @@ class BInstalledSw
      * * Many software have multiple experts
      * @var BSwExpert[]\ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="software", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\BSwExpert", mappedBy="software", cascade={"persist", "remove"})
      */
     private $experts;
 
    /**
     * One software has many install locations
     *
-    * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software", orphanRemoval=TRUE)
+    * @ORM\OneToMany(targetEntity="App\Entity\BSwInstLocn", mappedBy="software", cascade={"persist", "remove"},orphanRemoval=TRUE)
    */
    private $locations;
 
@@ -166,17 +166,28 @@ class BInstalledSw
     }
 
 
-    public function getExperts(): Collection
+    public function getExperts()
     {
-        return $this->experts;
+        return $this->experts->toArray();
+    }
+
+    public  function getExpertDetails()
+    {
+        return array_map(function ($expert){
+            return $expert->getPerson();
+        },
+            $this->experts->toArray()
+        );
     }
 
     public function getLocations()
     {
-        $this->locations->toArray();
+        return $this->locations->toArray();
     }
 
-    public function getServers($locations)
+
+
+    public function getServers()
     {
         return array_map(function($locations){
             return $locations->getServer();
