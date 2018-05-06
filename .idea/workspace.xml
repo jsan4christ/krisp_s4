@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88cf119-54c6-4440-aaf3-040f5a3c9a86" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Repository/PubsRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/software/add_experts_by_file.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/team/add_new_member.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/team/update_member_detail.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/team/view_member_detail.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/PubController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/PubController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/BPeople.php" afterPath="$PROJECT_DIR$/src/Entity/BPeople.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/BPublications.php" afterPath="$PROJECT_DIR$/src/Entity/BPublications.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/BSwExpert.php" afterPath="$PROJECT_DIR$/src/Entity/BSwExpert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/ExpertType.php" afterPath="$PROJECT_DIR$/src/Form/ExpertType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/PublicationType.php" afterPath="$PROJECT_DIR$/src/Form/PublicationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TeamType.php" afterPath="$PROJECT_DIR$/src/Form/TeamType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/BSwExpertRepository.php" afterPath="$PROJECT_DIR$/src/Repository/BSwExpertRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TeamRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TeamRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" afterPath="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/software/update_expert.html.twig" afterPath="$PROJECT_DIR$/templates/admin/software/update_expert.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,6 +24,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1691">
               <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_side_menu.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="54" column="80" lean-forward="false" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -92,8 +80,8 @@
                 <element signature="e#123#152#0#PHP" expanded="true" />
                 <element signature="e#4436#4467#0#PHP" expanded="true" />
                 <element signature="e#5196#5228#0#PHP" expanded="true" />
-                <marker date="1525550834504" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
-                <marker date="1525550834504" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
+                <marker date="1525606875382" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
+                <marker date="1525606875382" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
               </folding>
             </state>
           </provider>
@@ -121,25 +109,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PublicationType.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PublicationType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/PublicationType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
+            <state relative-caret-position="544">
               <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
               <folding>
                 <element signature="e#111#145#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/TeamType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="38" column="3" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="40" selection-end-column="14" />
-              <folding>
-                <element signature="e#111#134#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -220,7 +196,6 @@
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/BPeople.php" />
-        <option value="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/team/update_member_detail.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/PubsRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/BPublications.php" />
@@ -229,6 +204,7 @@
         <option value="$PROJECT_DIR$/src/Controller/Admin/PubController.php" />
         <option value="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/PublicationType.php" />
+        <option value="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" />
       </list>
     </option>
   </component>
@@ -626,12 +602,12 @@
       <workItem from="1524734460867" duration="38680000" />
       <workItem from="1430404581724" duration="235000" />
       <workItem from="1493521752678" duration="1275000" />
-      <workItem from="1493541228494" duration="55950000" />
+      <workItem from="1493541228494" duration="57011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405632000" />
+    <option name="totallyTimeSpent" value="406693000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1440" height="815" extended-state="0" />
@@ -955,14 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/team/view_team.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1088,8 +1056,8 @@
             <element signature="e#123#152#0#PHP" expanded="true" />
             <element signature="e#4436#4467#0#PHP" expanded="true" />
             <element signature="e#5196#5228#0#PHP" expanded="true" />
-            <marker date="1525550834504" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
-            <marker date="1525550834504" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
+            <marker date="1525606875382" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
+            <marker date="1525606875382" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
           </folding>
         </state>
       </provider>
@@ -1112,11 +1080,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/PublicationType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
+        <state relative-caret-position="544">
           <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
           <folding>
             <element signature="e#111#145#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="54" column="80" lean-forward="false" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>
