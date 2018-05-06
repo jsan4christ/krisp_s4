@@ -242,7 +242,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getVolume(): string
+    public function getVolume(): ?string
     {
         return $this->volume;
     }

@@ -1,0 +1,18 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'view_member_detail' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <img src="/imagesBIO/{{ p.photo2}}" alt="photo" style="width: 100%">
+            <h4>{{ p.name }} {{ p.surname }}</h4>
+            <p>{{ p.email }}</p>
+            <p>{{ p.telephone }}</p>
+            <p><a href="{{ path('update_member_profile', {id : p.id}) }}" class="btn btn-primary btn-block">Update Profile <i class="fa fa-edit" aria-hidden="true"></i> </a></p>
+        </div>
+        <div class="col-md-8 col-xs-12">
+            <p>{{ p.summary2 | raw }}</p>
+        </div>
+    </div>
+{% endblock %}

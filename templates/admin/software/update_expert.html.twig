@@ -2,3 +2,13 @@
 
 {% block body_id 'update_expert' %}
 
+{% block main %}
+    <h1>Update Expert Details</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">
+            Update Expert <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+    {{ form_end(form) }}
+{% endblock %}

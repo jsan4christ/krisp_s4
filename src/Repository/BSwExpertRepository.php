@@ -19,9 +19,9 @@ class BSwExpertRepository extends ServiceEntityRepository
         parent::__construct($registry, BSwExpert::class);
     }
 
-//    /**
-//     * @return BSwExpert[] Returns an array of BSwExpert objects
-//     */
+    /**
+     * @return BSwExpert[] Returns an array of BSwExpert objects
+     */
     /*
     public function findByExampleField($value)
     {

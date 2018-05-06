@@ -1,0 +1,26 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'update_member_detail' %}
+
+{% block main %}
+    <h1>Update Member Details</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.surname) }}
+        {{ form_row(form.initials) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.telephone) }}
+        {{ form_row(form.fax) }}
+        {{ form_row(form.summary) }}
+        {{ form_row(form.image) }}
+        {{ form_row(form.summary2) }}
+        {{ form_row(form.photo2) }}
+        {{ form_row(form.bioafricaSATuRN) }}
+        {{ form_row(form.category) }}
+        {{ form_row(form.member) }}
+        <button type="submit" class="btn btn-primary" formnovalidate>
+            Update Member <i class="fa fa-edit" aria-hidden="true"></i>
+        </button>
+    {{ form_end(form) }}
+{% endblock %}

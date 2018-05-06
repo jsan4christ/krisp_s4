@@ -9,6 +9,9 @@
 namespace App\Controller\Admin;
 
 
+use App\Entity\BPublications;
+use App\Form\PublicationType;
+use App\Repository\PubsRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -17,8 +20,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormBuilder;
 use Doctrine\DBAL;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 /**
  * Class PeopleController
+ * @Security("has_role('ROLE_ADMIN')")
  * @package App\Controller\Admin
  * @route("/pub")
  */
@@ -129,6 +135,50 @@ class PubController extends AbstractController
 
         return $this->redirectToRoute('admin_index');
 
+    }
+
+    /**
+     * @route("/view_pubs", name="view_pubs")
+     */
+    public function view_pubs(PubsRepository $pr)
+    {
+        $pubs = $pr->findAll();
+
+        return $this->render('admin/pub/view_pubs.html.twig', [
+            'pubs' => $pubs,
+        ]);
+    }
+
+    /**
+     * @route("/add_pub", name="add_pub")
+     */
+    public function add_pub(Request $request)
+    {
+        //logic here
+    }
+
+    /**
+     * @route("/update_pub/{id}", name="update_pub")
+     */
+    public function update_pub(Request $request, BPublications $pub)
+    {
+        $form = $this->createForm(PublicationType::class, $pub);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('message', 'Publication updated successfully!');
+
+            return $this->redirectToRoute('view_pubs');
+
+        }
+
+        return $this->render('admin/pub/update_pub.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
 }

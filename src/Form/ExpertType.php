@@ -31,9 +31,9 @@ class ExpertType extends AbstractType
 
                 ->add('type',ChoiceType::class, [
                     'choices' => [
-                        'Expert User',
-                        'Expert Installer',
-                        'Both'
+                        'Expert User' => 'Expert User',
+                        'Expert Installer' => 'Expert Installer',
+                        'Both' => 'Both'
                     ]
                 ])
                 ->add('software', EntityType::class, [

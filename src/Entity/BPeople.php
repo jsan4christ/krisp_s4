@@ -3,7 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * BPeople
  *
@@ -57,9 +58,8 @@ class BPeople
     private $summary;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="image", type="string", length=40, nullable=true)
+     * @Assert\File(mimeTypes={"image/png", "image/jpg", "image/jpeg"})
      */
     private $image;
 
@@ -85,9 +85,8 @@ class BPeople
     private $initials;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="photo2", type="text", length=255, nullable=true)
+     * @ORM\Column(name="photo2", type="string", length=40, nullable=true)
+     * @Assert\File(mimeTypes={"image/png", "image/jpg", "image/jpeg"})
      */
     private $photo2;
 
@@ -95,6 +94,7 @@ class BPeople
      * @var integer
      *
      * @ORM\Column(name="bioafricaSATuRN", type="integer", nullable=true)
+     *
      */
     private $bioafricasaturn;
 
@@ -154,7 +154,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -170,7 +170,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -186,7 +186,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getTelephone(): string
+    public function getTelephone(): ?string
     {
         return $this->telephone;
     }
@@ -202,7 +202,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getFax(): string
+    public function getFax(): ?string
     {
         return $this->fax;
     }
@@ -218,7 +218,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getSummary(): string
+    public function getSummary(): ?string
     {
         return $this->summary;
     }
@@ -231,26 +231,24 @@ class BPeople
         $this->summary = $summary;
     }
 
-    /**
-     * @return string
-     */
-    public function getImage(): string
+
+    public function getImage()
     {
         return $this->image;
     }
 
-    /**
-     * @param string $image
-     */
-    public function setImage(string $image)
+
+    public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getSummary2(): string
+    public function getSummary2(): ?string
     {
         return $this->summary2;
     }
@@ -258,7 +256,7 @@ class BPeople
     /**
      * @param string $summary2
      */
-    public function setSummary2(string $summary2)
+    public function setSummary2(?string $summary2)
     {
         $this->summary2 = $summary2;
     }
@@ -266,7 +264,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getSurname(): string
+    public function getSurname(): ?string
     {
         return $this->surname;
     }
@@ -282,7 +280,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getInitials(): string
+    public function getInitials(): ?string
     {
         return $this->initials;
     }
@@ -295,26 +293,24 @@ class BPeople
         $this->initials = $initials;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhoto2(): string
+
+    public function getPhoto2()
     {
         return $this->photo2;
     }
 
-    /**
-     * @param string $photo2
-     */
-    public function setPhoto2(string $photo2)
+
+    public function setPhoto2($photo2)
     {
         $this->photo2 = $photo2;
+
+        return $this;
     }
 
     /**
      * @return int
      */
-    public function getBioafricasaturn(): int
+    public function getBioafricasaturn(): ?int
     {
         return $this->bioafricasaturn;
     }
@@ -338,7 +334,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getMember(): string
+    public function getMember(): ?string
     {
         return $this->member;
     }
@@ -354,7 +350,7 @@ class BPeople
     /**
      * @return string
      */
-    public function getCategory(): string
+    public function getCategory(): ?string
     {
         return $this->category;
     }

@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * BSwExpert
  *
- * @ORM\Entity(repositoryClass="App\Repository\BSwExpertsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\BSwExpertRepository")
  * @ORM\Table(name="b_sw_expert", uniqueConstraints={@ORM\UniqueConstraint(name="ix_ReversePK", columns={"sw_id", "p_id"})}, indexes={@ORM\Index(name="IDX_6FDF8FF617B8E905", columns={"sw_id"})})
  * @UniqueEntity(fields={"software" , "person"})
  */

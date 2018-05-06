@@ -13,6 +13,7 @@ use App\Entity\BSwExpert;
 use App\Entity\BInstalledSw;
 use App\Entity\BSwInstLocn;
 use App\Entity\BPeople;
+use App\Form\ExpertType;
 use App\Form\LocationType;
 use App\Form\SoftwareType;
 use App\Form\ServerType;
@@ -20,12 +21,14 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Repository\BSwExpertRepository;
 use App\Repository\SoftwareRepository;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -368,13 +371,80 @@ class SoftwareController extends AbstractController
     /**
      * @route("/update_expert/{eid}", name="update_expert")
      */
-    public  function edit_expert($eid)
+    public  function edit_expert(Request $request ,$eid)
     {
         $em = $this->getDoctrine()->getManager();
 
         $expert = $em->find(BSwExpert::class, $eid);
-        dump($expert->getId());die;
 
+        $form = $this->createForm(ExpertType::class, $expert);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $em->flush();
+
+            $this->addFlash('success', 'Details updated!');
+
+            $this->redirectToRoute('view_experts');
+        }
+
+        return $this->render('admin/software/update_expert.html.twig', [
+            'expert' => $expert,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @route("/add_experts_by_file", name="add_experts_by_file")
+     */
+
+    public  function experts_by_file(Request $request)
+    {
+        $fileArray = ['Message' => 'Submit CSV file'];
+
+        $form = $this->createFormBuilder($fileArray)
+                ->add('cmdsCsv', FileType::class)
+                ->add('submit', SubmitType::class, [
+                    'label' => 'Upload CSV'
+                 ])
+                ->getForm()
+                ;
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            // instead of saving the file to the server
+            // $someNewFilename = ...//specify file name to be used.
+            // $form['attachment']->getData()->move($dir, $someNewFilename); //directory to store the file and name for the file
+
+            //Extract file
+            $cmdsCsv = $form['cmdsCsv']->getData();
+
+            //Check file to confirm it is csv
+
+           // try{
+                //process insertion to my sql
+          //  } catch (NotFoundHttpException $e){
+                //exception if it fails
+           // }
+
+
+            //
+
+            $fType = pathinfo($cmdsCsv, PATHINFO_EXTENSION);
+            dump(basename($cmdsCsv));die;
+
+            //check that file is uploaded and that file is .csv
+
+        }
+
+        return $this->render('admin/software/add_experts_by_file.html.twig', [
+            'fileArray' => $fileArray,
+            'form' => $form->createView(),
+        ]);
     }
     ######################End Software experts######################
 
