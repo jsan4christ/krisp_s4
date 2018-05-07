@@ -10,6 +10,7 @@ namespace App\Form;
 
 
 use App\Entity\BPeople;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -29,11 +30,11 @@ class TeamType extends AbstractType
             ->add('email', EmailType::class)
             ->add('telephone', TextType::class)
             ->add('fax', TextType::class)
-            ->add('summary', TextareaType::class)
+            ->add('summary', CKEditorType::class)
             ->add('image', FileType::class, [
                 'label' => 'Upload Emoji (JPEG, PNG)',
             ])
-            ->add('summary2', TextareaType::class)
+            ->add('summary2', CKEditorType::class)
             ->add('surname', TextType::class)
             ->add('initials', TextType::class)
             ->add('photo2', FileType::class, [

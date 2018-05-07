@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * BPublications
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BPublications
 {
+    const NUMS_ITEMS = 20;
+
     /**
      * @var integer
      *
@@ -71,9 +74,8 @@ class BPublications
     private $link;
 
     /**
-     * @var string
-     *
      * @ORM\Column(name="file", type="string", length=50, nullable=true)
+     * @Assert\File(mimeTypes={"Application/pdf"})
      */
     private $file;
 
@@ -170,7 +172,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -178,7 +180,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -194,7 +196,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getAuthors(): string
+    public function getAuthors(): ?string
     {
         return $this->authors;
     }
@@ -210,7 +212,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getAbstract(): string
+    public function getAbstract(): ?string
     {
         return $this->abstract;
     }
@@ -218,7 +220,7 @@ class BPublications
     /**
      * @param string $abstract
      */
-    public function setAbstract(string $abstract)
+    public function setAbstract(?string $abstract)
     {
         $this->abstract = $abstract;
     }
@@ -226,7 +228,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getJournal(): string
+    public function getJournal(): ?string
     {
         return $this->journal;
     }
@@ -234,7 +236,7 @@ class BPublications
     /**
      * @param string $journal
      */
-    public function setJournal(string $journal)
+    public function setJournal(?string $journal)
     {
         $this->journal = $journal;
     }
@@ -250,7 +252,7 @@ class BPublications
     /**
      * @param string $volume
      */
-    public function setVolume(string $volume)
+    public function setVolume(?string $volume)
     {
         $this->volume = $volume;
     }
@@ -258,7 +260,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getCitations(): int
+    public function getCitations(): ?int
     {
         return $this->citations;
     }
@@ -266,7 +268,7 @@ class BPublications
     /**
      * @param int $citations
      */
-    public function setCitations(int $citations)
+    public function setCitations(?int $citations)
     {
         $this->citations = $citations;
     }
@@ -274,7 +276,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getLink(): string
+    public function getLink(): ?string
     {
         return $this->link;
     }
@@ -282,31 +284,29 @@ class BPublications
     /**
      * @param string $link
      */
-    public function setLink(string $link)
+    public function setLink(?string $link)
     {
         $this->link = $link;
     }
 
-    /**
-     * @return string
-     */
-    public function getFile(): string
+
+    public function getFile()
     {
         return $this->file;
     }
 
-    /**
-     * @param string $file
-     */
-    public function setFile(string $file)
+
+    public function setFile($file)
     {
         $this->file = $file;
+
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getKeywords(): string
+    public function getKeywords(): ?string
     {
         return $this->keywords;
     }
@@ -314,7 +314,7 @@ class BPublications
     /**
      * @param string $keywords
      */
-    public function setKeywords(string $keywords)
+    public function setKeywords(?string $keywords)
     {
         $this->keywords = $keywords;
     }
@@ -322,7 +322,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getTopdescription(): string
+    public function getTopdescription(): ?string
     {
         return $this->topdescription;
     }
@@ -338,7 +338,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getPages(): string
+    public function getPages(): ?string
     {
         return $this->pages;
     }
@@ -346,7 +346,7 @@ class BPublications
     /**
      * @param string $pages
      */
-    public function setPages(string $pages)
+    public function setPages(?string $pages)
     {
         $this->pages = $pages;
     }
@@ -354,7 +354,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getDatafile(): string
+    public function getDatafile(): ?string
     {
         return $this->datafile;
     }
@@ -362,7 +362,7 @@ class BPublications
     /**
      * @param string $datafile
      */
-    public function setDatafile(string $datafile)
+    public function setDatafile(?string $datafile)
     {
         $this->datafile = $datafile;
     }
@@ -370,7 +370,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getDate(): int
+    public function getDate(): ?int
     {
         return $this->date;
     }
@@ -378,7 +378,7 @@ class BPublications
     /**
      * @param int $date
      */
-    public function setDate(int $date)
+    public function setDate(?int $date)
     {
         $this->date = $date;
     }
@@ -386,7 +386,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getDoi(): string
+    public function getDoi(): ?string
     {
         return $this->doi;
     }
@@ -394,7 +394,7 @@ class BPublications
     /**
      * @param string $doi
      */
-    public function setDoi(string $doi)
+    public function setDoi(?string $doi)
     {
         $this->doi = $doi;
     }
@@ -402,7 +402,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getIssn(): string
+    public function getIssn(): ?string
     {
         return $this->issn;
     }
@@ -410,7 +410,7 @@ class BPublications
     /**
      * @param string $issn
      */
-    public function setIssn(string $issn)
+    public function setIssn(?string $issn)
     {
         $this->issn = $issn;
     }
@@ -418,7 +418,7 @@ class BPublications
     /**
      * @return float
      */
-    public function getImpact(): float
+    public function getImpact(): ?float
     {
         return $this->impact;
     }
@@ -426,7 +426,7 @@ class BPublications
     /**
      * @param float $impact
      */
-    public function setImpact(float $impact)
+    public function setImpact(?float $impact)
     {
         $this->impact = $impact;
     }
@@ -434,7 +434,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getBioafricasaturn(): int
+    public function getBioafricasaturn(): ?int
     {
         return $this->bioafricasaturn;
     }
@@ -442,7 +442,7 @@ class BPublications
     /**
      * @param int $bioafricasaturn
      */
-    public function setBioafricasaturn(int $bioafricasaturn)
+    public function setBioafricasaturn(?int $bioafricasaturn)
     {
         $this->bioafricasaturn = $bioafricasaturn;
     }
@@ -450,7 +450,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getVideo(): int
+    public function getVideo(): ?int
     {
         return $this->video;
     }
@@ -458,7 +458,7 @@ class BPublications
     /**
      * @param int $video
      */
-    public function setVideo(int $video)
+    public function setVideo(?int $video)
     {
         $this->video = $video;
     }
@@ -466,7 +466,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getShorttitle(): string
+    public function getShorttitle(): ?string
     {
         return $this->shorttitle;
     }
@@ -474,7 +474,7 @@ class BPublications
     /**
      * @param string $shorttitle
      */
-    public function setShorttitle(string $shorttitle)
+    public function setShorttitle(?string $shorttitle)
     {
         $this->shorttitle = $shorttitle;
     }
@@ -482,7 +482,7 @@ class BPublications
     /**
      * @return string
      */
-    public function getFeature(): string
+    public function getFeature(): ?string
     {
         return $this->feature;
     }
@@ -490,7 +490,7 @@ class BPublications
     /**
      * @param string $feature
      */
-    public function setFeature(string $feature)
+    public function setFeature(?string $feature)
     {
         $this->feature = $feature;
     }
@@ -498,7 +498,7 @@ class BPublications
     /**
      * @return int
      */
-    public function getProjectid(): int
+    public function getProjectid(): ?int
     {
         return $this->projectid;
     }
@@ -506,7 +506,7 @@ class BPublications
     /**
      * @param int $projectid
      */
-    public function setProjectid(int $projectid)
+    public function setProjectid(?int $projectid)
     {
         $this->projectid = $projectid;
     }

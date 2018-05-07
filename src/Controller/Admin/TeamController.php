@@ -38,7 +38,11 @@ class TeamController extends AbstractController
     public function view_all(TeamRepository $team)
     {
 
-        $team = $team->findAll();
+        //$team = $team->findAll();
+        $team = $team->findBy(
+            ['member' => 'current'],
+            ['id' => 'ASC']
+        );
 
         return $this->render('admin/team/view_team.html.twig', [
             'team' => $team
@@ -70,18 +74,17 @@ class TeamController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             if($member->getImage()){
                 $emoji = $member->getImage();
-                $emojiName = $member->getImage()->getClientOriginalName() ;
+                $emojiName = $member->getImage()->getClientOriginalName();
                 $emoji->move($fp->getTargetDirectory(), $emojiName);
+                $member->setImage($emojiName);
             }
 
             if($member->getPhoto2()){
                 $photo = $member->getPhoto2();
                 $photoName = $member->getPhoto2()->getClientOriginalName();
                 $photo->move($fp->getTargetDirectory(), $photoName);
+                $member->setPhoto2($photoName);
             }
-
-            $member->setImage($emojiName);
-            $member->setPhoto2($photoName);
 
             $this->getDoctrine()->getManager()->persist($member);
             $this->getDoctrine()->getManager()->flush();

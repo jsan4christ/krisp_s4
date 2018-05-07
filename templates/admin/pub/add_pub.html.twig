@@ -1,9 +1,9 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block body_id 'update_pub' %}
+{% block body_id 'add_pub' %}
 
 {% block main %}
-    <h1>Update Publication</h1>
+    <h1>Add New Publication</h1>
 
     {{ form_start(form) }}
         {{ form_row(form.title) }}
@@ -28,7 +28,7 @@
         {{ form_row(form.feature) }}
         {{ form_row(form.projectid) }}
         <button type="submit" class="btn btn-primary" formnovalidate>
-            Update Publication
+            Add Publication
         </button>
     {{ form_end(form) }}
 {% endblock %}

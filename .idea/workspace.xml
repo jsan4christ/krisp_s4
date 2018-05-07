@@ -2,8 +2,731 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88cf119-54c6-4440-aaf3-040f5a3c9a86" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/CmdType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/pub/add_pub.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/admin/software/add_cmd.html.twig" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/1280x720_JIMI3180%5b8%5d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/2ndInternationalWorkshopBrazil2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/400x380_africa_hiv_drupal_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/8thSouthAfricaHIVDrugResistance2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/A-Amoji_Canha.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/A-oak-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/AIDS_cycle_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/AIDS_map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/AIDS_prevalence_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ARVHouseJar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ARVsoldierLion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/AdvertMSCSANTHE.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Africa-Centres-Professor-Tulio-de-Oliveira-congratulates-Dr-Justen-Manasa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Africa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Africa2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BSPSANBI2015.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BSPSANBI2015sm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BioinformaticsPostDocPoster1A4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BioinformaticsPostDocPoster2A4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BioinformaticsPostDocPoster3A4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BioinformaticsTropicsUganda2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/BioinformaticsTropicsUganda2014B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CAPRISA_PhD_Advert1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CAPRISA_PhD_Advert1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CAPRISA_PhD_Advert2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CD3_frontcover_final.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CD_1_FRONT_SMALL.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CD_1_FRONT_SMALL.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/CD_2_FRONT_SMALL.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Chimukangara_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Danaviah.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Dellar_photo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/EUGIZpict1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Eduan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/EduanWilkinsonFloridaUniv.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/EduanWilkinsonFloridaUniv2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/FeatureResearchPhDFellowships.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/FeatureResearchTravelFellowships.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/FeatureResearchTravelFellowships2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Gabriel-Valles_Character-Design_Kiger.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Genomicspart3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Giandhari_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVDRtools.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVDRtools.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVDRtools.xcf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVMercuryPrinceHarryDurban.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVWallStreetJournal.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/HIVvirion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ICC_AWACC_0023.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ICC_AWACC_0024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/IlluminaFranshoeck.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ImgBlog32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Jivingwithscience.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Jivingwithsciencesm.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Joshua-T-MACHAO.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Joshua-T-MACHAOsm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_MRCFlagship_Seminar_August2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_Talks_October2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_Talks_September2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_Talks_September2017_edited.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_deOliveiraJuly2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_jobs_grants_technical_finantial_data_quality.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISP_team.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISPnewsletter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KRISPnewsletter_1_2017A4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KiltedSmurf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/KrispDurban_0001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Krisp_video.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/MRCFlagshipseminars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/MRC_Supplement_2013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Moosa_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Mutenherwa_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/NYAS_HIV_Phylogenetics_2015_Flyer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/NatureGeneticsHIV.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/NelsonMandelaGenomicsUKZN.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/OpenAccesslogoGREEN.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PhotWorkshop.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PhotWorkshop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PhylogeneticsNYASUNAIDS.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterBITUganda2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterTravelFellowship.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNComputerScience.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNGenetics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNHEARD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNMolEpi1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNMolEpi2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/PosterUKZNMolEpi2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Richard.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SAGS_people_0022.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATURNTBcentre.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATuRN2012_advertisement.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATuRN2012poster.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATuRNCAPRISA1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATuRNnewsletter_1_2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SATuRNnewsletter_4_2016.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Science-2015-Cohen-1188-9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipApril2015KRITH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipAug2015KRITHposter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipFeb2015KRITH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipFeb2016KRITHposter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipJan2017poster.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipJul2015KRITHposter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipJune2015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipJune2017poster.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipMarch2015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipMarch2016KRITHposter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SeminarMRCFlagshipMarch2017poster.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_AfricaCentre_Apr2014B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Aug2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Aug2014B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Feb2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Jan2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Jan2014A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_January2015.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Jul2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Mar2014B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Mar2014C.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Mar2014D.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_March2014.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_March2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_March2014Commercial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Nov2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Oct2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_MRCFlagship_Sep2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Seminar_PeterPiot_AfricaCentre_Apr2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SocialCycleHIVNature2016.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SoftwareManagerBioinformatics.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SoftwareManagerBioinformatics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SouthernAfricanARVdrugresistanceguidelines_2012-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SundayTimes2013.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SureshneePillayphoto.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/SwissSASymposiumpathogengenomics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Tiago_photo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Tomita-Andrew.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Tomita_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/TulioZandile_KRISP.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/UNAIDS_cycle_transmission_phylogenetic_deOliveira.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/VEME2016.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Vandormael_photo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/Vandormael_photo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/VideoHIVCaprisa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/VideoLabDiary1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/VideoLabDiary2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/VideoLabDiaryPart2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/YouTubelogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/YouTubelogo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/aruba.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/arubasm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafrica.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafrica2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafrica3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafricagenomics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafricagenomics250.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/bioafricanews.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/biostatisticsKRITH2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog2img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog2imgsmall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog3img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog3imgsmall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog4img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog4imgsm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blog4imgsmall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blogASZwelethu1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blogASZwelethu1sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blogASZwelethu2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blogAdrian.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/blogAdriansm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/breast1news.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca101HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca101chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca101extraHIVDB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca101extraanswer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca102HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca102chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca103HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca103chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca104chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca104extraanswer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca105chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca105extraHIVDB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca105extraanswer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca108HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca1HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca1chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca2HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca2chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca3HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca3chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca4HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca4chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca5HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca5chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca6HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca6chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca7HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca7chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca8HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca8chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca9HIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ca9chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/capenews.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/cawhite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/cd4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/cd4sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/curacao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/curacaosm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveira_photo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveira_photoOLD.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveira_photoRED.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveira_photoTIAGO.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveira_photoTwitter.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/deOliveiraposter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/drakensburg_0006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/error_log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/ethics_viral_genomicsPhylogeneticsWorkshop2016.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature.tb3_.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature.tb5_.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature.tb6_.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature.tb7_.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature.tbx588.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature2012blogs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature2012output.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature2012website.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/feature8thSATuRNworkshopHIVTBresistance.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureBioinformaticsTropicsUganda2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureBioinformaticsWorkshopBrazil2014.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureGenomicsCentre.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureHIVDRpositiveselection.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureHIVDRseminars.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureHIVTBcasebook.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureHIVgenotypingprotocols.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureKRISP.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureKRISP.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureKRISPpositions2017.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureKRISPpositions2017.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureNGS_DRC.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureNursesHIVDrugResistance.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureOpenLetterTB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featurePhDs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureSATuRN2012.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureSATuRNBook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureSATuRNnewsletter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureSATuRNnewsletter1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureShafer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureYouTubeBioAfricaSATuRN.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureaedMicrobialGWAS.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featureaedisviruses.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featurebiotropics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featuredToys2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/featurekrith.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/frontpageLancet2PapersDec2016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/genomicsmachinery.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/genotypingmethods.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id1HIVTDRprevalenceSouthAfrica.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id2HIVTDRSurveillanceSouthAfrica.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id3HIVDRChildrenPMTCT.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id4HIVDRphenotype.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id5HIVDRHairLopinavir.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/id8HIVDRWorkshop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/idse.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imageBioTropics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imagescience.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgACILT.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgAWACC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgAwacc1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog10sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog11sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog13sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog14.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog14sm.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog16sm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog17sm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog18img2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog18sm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog20sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog21sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog22sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog23sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog24sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog26Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog27Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog28Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog30Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog31Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog9A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog9Asm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgBlog9B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgCGD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgCGDtable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgGenomeWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgGuardian.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgHIVDR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgHIVTBDrugResistanceBook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgHIVTBDrugResistanceBookSponsors.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgIAS.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgJusten.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgJusten2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgKZNSA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgKZNSAsm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgLabMed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgMIT.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgNURSES.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgNYtimes.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgNewScientist.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgReport17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgReport17sm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgTBCconf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgTBcentre.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgTDRGIS.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgUKZN.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgUnion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgVideo9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgWSJ.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgaidsmap.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgbbc2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgbbcmedics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog29sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog35sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog37sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog38sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog39sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog40sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog43sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog44b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog44c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog44sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblog44sm2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogGeneva.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogGeneva2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogGenevasm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogYumnaMoosa.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogYumnaMoosasm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgblogYumnaMoosasm2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgbooklaunch1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgbooklaunch2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgcaprisa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgcasebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgcomminit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgdocguide.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imggettested.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgheard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgheard2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imghivorigin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgimpilo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgindependent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnature2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnewbio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews100.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews101.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews101Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews103.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews104.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews105.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews108.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews112.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews113.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews113Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews116.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews118.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews119.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews120.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews120sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews121.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews121sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews130.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews133.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews134.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews135.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews137.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews138.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews138.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews142.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews146.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews149.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews150.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews157.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews157sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews167.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews169.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews171.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews186.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews24.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews25.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews26.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews27newsletter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews28openletter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews31.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews31newsletter.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews32.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews41.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews43newsletter.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews44.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews45.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews45magazine.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews69big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews70big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews71sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews75.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews77.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews78.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews79.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews80big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews81.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews82.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews82big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews83.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews84.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews84big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews85big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews86.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews88.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews89.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews90.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews90Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews91.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews92.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews92Big.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews93.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews94.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews95.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnews96.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgnewsletter3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgoxfordblueprint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgpostdoc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport13.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport13people.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport15.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport15people.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreport22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgreuters.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgsaturn1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgsaturn1small.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgscience.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgshare.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgsocial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgsundaytribune.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgwhite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgworkshop2011a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgworkshop2011b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgworkshop2011c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/imgworkshop2011c400.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/jafferphoto.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/jivingwithsciencedancing.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/krithopenning.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/lancet.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/lancetIDDrugResistance2016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/linksbio3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/linksbio4.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/linksbio5.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/linksbionew.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2LASPHTLV.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2Phylo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2Prot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2Prot.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHBV.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHCV.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHCV.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHHV8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHIV.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHIV.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2REGAHPV.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2RNAdb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2RNAdb.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2Stanfdb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2Stanfdb.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2align.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2blast.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2blast.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2blastalign.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2blastalign.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2epiq.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2epiq.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2phy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2pie.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2pie.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2ppp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2ppp.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2regadb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2stanford.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2subC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2subC.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2table.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2tree.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/log2tree.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logCPR.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logGDE.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logGDE.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logHIVDR.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logPAUP.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logPAUP.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logProteome.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logREGA.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logREGAlocal.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logVIRUSSUB.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logdengue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoART.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logoYoutube5a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logobio3pangea.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logobionew1155.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logobionew2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logobionew270.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logokrisp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/logstanford.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/marcel.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/marcel2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu23BIG.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu3.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizuAllan.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu_nerduck.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/mojizu_tantra-rat5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/nature_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news116feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news138feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news141feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news142feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news143bfeature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news143feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news145feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news146feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news149feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news150feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news151feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news154feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news155feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news156feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news158feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news158sm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news159feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news160feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news167feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news169feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news169link.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news173feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news177.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news177feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news179.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news179feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news180feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news181.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news181feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news183.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news183feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news184.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news184feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news185.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news185feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/news187feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/nicolette.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/pasermeeting.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/pdf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/piratescience.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/projects.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/proteomicsfeature.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/proteomicsfeature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/pub138feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/pub139feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/pub161feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/publications.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/reuters_UNAIDS2016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/reuters_UNAIDS2016.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/road1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/roadblock.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/sabcnews.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/santheinfo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/santhelogo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/saturnfeature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/saturnfeatureYouTube250.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/saturnfeatureYouTube350.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/science_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/science_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/search.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/software17feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/software20feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/software25feature.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/themercury.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/tulio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/twitterBig.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/unaids_eng.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/unaids_phylogenetics.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/veron.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/webvisit1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/webvisit2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/wellcomeNews.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/youtube6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/imagesBIO/zethu.jpeg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/admin/pub/doi.html.twig" afterPath="$PROJECT_DIR$/templates/admin/pub/add_pub_by_doi.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/demo.iml" afterPath="$PROJECT_DIR$/.idea/demo.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/PubController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/PubController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" afterPath="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/BPublications.php" afterPath="$PROJECT_DIR$/src/Entity/BPublications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/BSwCmds.php" afterPath="$PROJECT_DIR$/src/Entity/BSwCmds.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/PublicationType.php" afterPath="$PROJECT_DIR$/src/Form/PublicationType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Form/TeamType.php" afterPath="$PROJECT_DIR$/src/Form/TeamType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/PubsRepository.php" afterPath="$PROJECT_DIR$/src/Repository/PubsRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" afterPath="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/admin/reg_admin.html.twig" afterPath="$PROJECT_DIR$/templates/admin/admin/reg_admin.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" afterPath="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig" afterPath="$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" afterPath="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,44 +742,40 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/BlogController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1691">
-              <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_side_menu.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="54" column="80" lean-forward="false" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TeamController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Admin/TeamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_pubs.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig">
+      <file leaf-file-name="PubController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/PubController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="94" lean-forward="false" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
+            <state relative-caret-position="-62">
+              <caret line="69" column="25" lean-forward="false" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
               <folding>
-                <element signature="e#12#34#0#Twig" expanded="true" />
+                <element signature="e#123#152#0#PHP" expanded="true" />
+                <element signature="e#3858#3894#0#PHP" expanded="true" />
+                <element signature="e#5976#6007#0#PHP" expanded="true" />
+                <element signature="e#6939#6968#0#PHP" expanded="true" />
+                <element signature="e#8163#8195#0#PHP" expanded="true" />
+                <marker date="1525703980271" expanded="true" signature="4176:4224" ph="SELECT id, d... b_publications" />
+                <marker date="1525703980271" expanded="true" signature="5229:5297" ph="UPDATE `b_pu... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_pub_by_doi.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/pub/add_pub_by_doi.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,46 +783,32 @@
       <file leaf-file-name="BPublications.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/BPublications.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3310">
-              <caret line="244" column="34" lean-forward="false" selection-start-line="244" selection-start-column="34" selection-end-line="244" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PubController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/PubController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="179" column="42" lean-forward="false" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
+            <state relative-caret-position="462">
+              <caret line="278" column="32" lean-forward="false" selection-start-line="278" selection-start-column="32" selection-end-line="278" selection-end-column="32" />
               <folding>
-                <element signature="e#123#152#0#PHP" expanded="true" />
-                <element signature="e#4436#4467#0#PHP" expanded="true" />
-                <element signature="e#5196#5228#0#PHP" expanded="true" />
-                <marker date="1525606875382" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
-                <marker date="1525606875382" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
+                <element signature="e#30#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_pub.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig">
+      <file leaf-file-name="BSwInstLocn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/BSwInstLocn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="864">
+              <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PubsRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/PubsRepository.php">
+      <file leaf-file-name="BPeople.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/BPeople.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+            <state relative-caret-position="104">
+              <caret line="63" column="19" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
               <folding>
-                <element signature="e#117#146#0#PHP" expanded="true" />
+                <element signature="e#30#62#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,24 +817,45 @@
       <file leaf-file-name="PublicationType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/PublicationType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+            <state relative-caret-position="462">
+              <caret line="59" column="67" lean-forward="false" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
               <folding>
-                <element signature="e#111#145#0#PHP" expanded="true" />
+                <element signature="e#111#140#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/PostRepository.php">
+      <file leaf-file-name="update_pub.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="51" column="53" lean-forward="false" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+            <state relative-caret-position="435">
+              <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
               <folding>
-                <element signature="e#265#285#0#PHP" expanded="true" />
-                <marker date="1512979767000" expanded="true" signature="1175:1376" ph="SELECT p, a,... App" />
+                <element signature="e#12#34#0#Twig" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_pub.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin/pub/add_pub.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+              <folding>
+                <element signature="e#12#34#0#Twig" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeamType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/TeamType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,6 +872,7 @@
       <find>contain</find>
       <find>p_id</find>
       <find>artic</find>
+      <find>cit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,12 +881,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/admin/server/update_server.html.twig" />
-        <option value="$PROJECT_DIR$/templates/admin/cat/view_cats.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Tag.php" />
-        <option value="$PROJECT_DIR$/src/Entity/BSwCat.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Comment.php" />
-        <option value="$PROJECT_DIR$/src/Migrations/Version20180425125709.php" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20180425125442.php" />
         <option value="$PROJECT_DIR$/templates/admin/software/add_software.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/SoftwareType.php" />
@@ -187,24 +908,30 @@
         <option value="$PROJECT_DIR$/src/Repository/BSwExpertRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/BSwExpert.php" />
         <option value="$PROJECT_DIR$/templates/admin/software/add_experts_by_file.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" />
         <option value="$PROJECT_DIR$/src/Repository/TeamRepository.php" />
         <option value="$PROJECT_DIR$/templates/admin/team/view_member_detail.html.twig" />
         <option value="$PROJECT_DIR$/templates/admin/team/add_new_member.html.twig" />
-        <option value="$PROJECT_DIR$/src/Form/TeamType.php" />
         <option value="$PROJECT_DIR$/src/Service/FileUploader.php" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/BPeople.php" />
         <option value="$PROJECT_DIR$/templates/admin/team/update_member_detail.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/PubsRepository.php" />
-        <option value="$PROJECT_DIR$/src/Entity/BPublications.php" />
         <option value="$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/PubController.php" />
-        <option value="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/admin/reg_admin.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/TeamType.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php" />
+        <option value="$PROJECT_DIR$/templates/admin/software/add_cmd.html.twig" />
+        <option value="$PROJECT_DIR$/src/Form/CmdType.php" />
+        <option value="$PROJECT_DIR$/src/Entity/BSwCmds.php" />
         <option value="$PROJECT_DIR$/src/Form/PublicationType.php" />
+        <option value="$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/templates/admin/team/view_team.html.twig" />
+        <option value="$PROJECT_DIR$/templates/admin/pub/add_pub.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/TeamController.php" />
         <option value="$PROJECT_DIR$/templates/admin/_side_menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/Entity/BPublications.php" />
+        <option value="$PROJECT_DIR$/templates/admin/pub/add_pub_by_doi.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/PubController.php" />
       </list>
     </option>
   </component>
@@ -313,6 +1040,7 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid-doctrine" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -402,70 +1130,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="krisp_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -475,17 +1139,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="SearchEverywhereHistoryKey" value="auth&#9;FILE&#9;file:///Applications/XAMPP/xamppfiles/htdocs/krisp_s4/var/cache/dev/ContainerUuCZqZQ/getMaker_AutoCommand_MakeAuthService.php" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/pub" />
       <recent name="$PROJECT_DIR$/templates/admin/team" />
       <recent name="$PROJECT_DIR$/templates/admin/server" />
       <recent name="$PROJECT_DIR$/templates/admin" />
       <recent name="$PROJECT_DIR$/src/Entity" />
-      <recent name="$PROJECT_DIR$/src/Repository" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/admin/software" />
@@ -602,12 +1266,12 @@
       <workItem from="1524734460867" duration="38680000" />
       <workItem from="1430404581724" duration="235000" />
       <workItem from="1493521752678" duration="1275000" />
-      <workItem from="1493541228494" duration="57011000" />
+      <workItem from="1493541228494" duration="90541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406693000" />
+    <option name="totallyTimeSpent" value="440223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1440" height="815" extended-state="0" />
@@ -663,89 +1327,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/admin/software/view_experts.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Type/TeamType.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/SoftwareCmdsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#111#151#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Type/PublicationType.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/PostType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-307">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#259#279#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/_types.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <caret line="110" column="13" lean-forward="false" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_8.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="872" column="9" lean-forward="false" selection-start-line="872" selection-start-column="9" selection-end-line="872" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/collections/lib/Doctrine/Common/Collections/ArrayCollection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="75" column="20" lean-forward="false" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/LocationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_9.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="671" column="9" lean-forward="false" selection-start-line="671" selection-start-column="9" selection-end-line="671" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/BInstalledSw.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="191" column="21" lean-forward="false" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
-          <folding>
-            <element signature="e#30#73#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/software/add_server.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -769,16 +1350,6 @@
         <state relative-caret-position="465">
           <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/BSwInstLocn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -830,18 +1401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SoftwareRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="48" />
-          <folding>
-            <marker date="1525174161878" expanded="true" signature="818:866" ph="SELECT s FRO... App" />
-            <marker date="1525174161878" expanded="true" signature="1369:1430" ph="SELECT s FRO... App" />
-            <marker date="1525174161878" expanded="true" signature="3134:3219" ph="SELECT s, e App" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/BSwExpertRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -884,16 +1443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/BSwExpert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -912,30 +1461,6 @@
             <element signature="e#12#34#0#Twig" expanded="false" />
             <element signature="e#222#241#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/FileUploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/team/view_team.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,26 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/BPeople.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="258" column="33" lean-forward="false" selection-start-line="258" selection-start-column="33" selection-end-line="258" selection-end-column="33" />
-          <folding>
-            <element signature="e#30#62#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/TeamType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="38" column="3" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="e#111#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/PostRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -996,31 +1501,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/PubsRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/SiteAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding>
-            <element signature="e#117#146#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6000">
-          <caret line="430" column="34" lean-forward="false" selection-start-line="430" selection-start-column="34" selection-end-line="430" selection-end-column="34" />
+        <state relative-caret-position="-251">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="94" lean-forward="false" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
-          <folding>
-            <element signature="e#12#34#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,67 +1517,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/TeamController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/BInstalledSw.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="2820">
+          <caret line="191" column="21" lean-forward="false" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/SiteAdminController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/SoftwareRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/PubController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="179" column="42" lean-forward="false" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
           <folding>
-            <element signature="e#123#152#0#PHP" expanded="true" />
-            <element signature="e#4436#4467#0#PHP" expanded="true" />
-            <element signature="e#5196#5228#0#PHP" expanded="true" />
-            <marker date="1525606875382" expanded="true" signature="2845:2893" ph="SELECT id, d... b_publications" />
-            <marker date="1525606875382" expanded="true" signature="3898:3966" ph="UPDATE `b_pu... " />
+            <marker date="1525174161878" expanded="true" signature="818:866" ph="SELECT s FRO... App" />
+            <marker date="1525174161878" expanded="true" signature="1369:1430" ph="SELECT s FRO... App" />
+            <marker date="1525174161878" expanded="true" signature="3134:3219" ph="SELECT s, e App" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/software/view_software.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/pub/view_pubs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/PubsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#117#146#0#PHP" expanded="true" />
+            <marker date="1525611304183" expanded="true" signature="687:720" ph="SELECT p FRO... App" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bundles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="85" lean-forward="true" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#254#313#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/admin/reg_admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/BSwExpert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/BSwCmds.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/CategoryType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/CmdType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="30" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <element signature="e#111#139#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/software/add_cmd.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/SoftwareController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="593" column="42" lean-forward="false" selection-start-line="593" selection-start-column="42" selection-end-line="593" selection-end-column="42" />
+          <folding>
+            <element signature="e#17242#17276#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/BProjects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-301">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/TeamType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/BSwInstLocn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/BPeople.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="63" column="19" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
+          <folding>
+            <element signature="e#30#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/PublicationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="59" column="67" lean-forward="false" selection-start-line="59" selection-start-column="67" selection-end-line="59" selection-end-column="67" />
+          <folding>
+            <element signature="e#111#140#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/FileUploader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="45" column="24" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="45" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/pub/update_pub.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="435">
+          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/pub/add_pub.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+          <folding>
+            <element signature="e#12#34#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/team/view_team.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="125" lean-forward="false" selection-start-line="19" selection-start-column="125" selection-end-line="19" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="60" column="76" lean-forward="false" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/TeamController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/BPublications.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3310">
-          <caret line="244" column="34" lean-forward="false" selection-start-line="244" selection-start-column="34" selection-end-line="244" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/PublicationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="47" column="49" lean-forward="false" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+        <state relative-caret-position="462">
+          <caret line="278" column="32" lean-forward="false" selection-start-line="278" selection-start-column="32" selection-end-line="278" selection-end-column="32" />
           <folding>
-            <element signature="e#111#145#0#PHP" expanded="true" />
+            <element signature="e#30#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/_side_menu.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/admin/pub/add_pub_by_doi.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="54" column="80" lean-forward="false" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+        <state relative-caret-position="150">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/PubController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="69" column="25" lean-forward="false" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <folding>
+            <element signature="e#123#152#0#PHP" expanded="true" />
+            <element signature="e#3858#3894#0#PHP" expanded="true" />
+            <element signature="e#5976#6007#0#PHP" expanded="true" />
+            <element signature="e#6939#6968#0#PHP" expanded="true" />
+            <element signature="e#8163#8195#0#PHP" expanded="true" />
+            <marker date="1525703980271" expanded="true" signature="4176:4224" ph="SELECT id, d... b_publications" />
+            <marker date="1525703980271" expanded="true" signature="5229:5297" ph="UPDATE `b_pu... " />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -9,10 +9,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\BServer;
+use App\Entity\BSwCmds;
 use App\Entity\BSwExpert;
 use App\Entity\BInstalledSw;
 use App\Entity\BSwInstLocn;
 use App\Entity\BPeople;
+use App\Form\CmdType;
 use App\Form\ExpertType;
 use App\Form\LocationType;
 use App\Form\SoftwareType;
@@ -563,5 +565,43 @@ class SoftwareController extends AbstractController
     }
 
     ##################End Servers###########################
+
+    ##################Begin Commands########################
+
+    /**
+     * @route("/add_cmd", name="add_cmd")
+     */
+    public function add_cmd(Request $request)
+    {
+        $cmd = new BSwCmds();
+
+        $form = $this->createForm(CmdType::class, $cmd);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($cmd);
+            $em->flush();
+
+            $this->addFlash('message', 'Command added!');
+
+            return $this->redirectToRoute('view_software');
+        }
+
+        return $this->render('admin/software/add_cmd.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @route("/add_cmds_by_csv", name="add_cmds_by_csv")
+     */
+    public function add_cmd_by_csv()
+    {
+        //add logic
+    }
+    ##################End Commands##########################
 
 }

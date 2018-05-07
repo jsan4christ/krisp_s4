@@ -17,7 +17,7 @@
         </thead>
         {% for member in team %}
         <tr>
-                <td><a href="{{ path('update_member_profile', {id : member.id}) }}" class="link"><img src="/imagesBIO/{{ member.image}}" alt="emoji"></a></td>
+                <td><a href="{{ path('update_member_profile', {id : member.id}) }}" class="link"><img src="{{ asset('uploads/'~member.image) }}" alt="emoji"></a></td>
                 <td>{{ member.name }}</td>
                 <td>{{ member.email }}</td>
                 <td>{{ member.telephone }}</td>

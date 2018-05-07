@@ -1,0 +1,16 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'add_cmd' %}
+
+{% block main %}
+    <h1>Add Command</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.software) }}
+        {{ form_row(form.cmdName) }}
+        {{ form_row(form.cmdActive) }}
+        <button type="submit" class="btn btn-primary">
+            Add Command
+        </button>
+    {{ form_end(form) }}
+{% endblock %}

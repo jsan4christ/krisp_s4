@@ -12,11 +12,15 @@ namespace App\Controller\Admin;
 use App\Entity\BPublications;
 use App\Form\PublicationType;
 use App\Repository\PubsRepository;
+use App\Service\FileUploader;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormBuilder;
 use Doctrine\DBAL;
@@ -33,7 +37,7 @@ class PubController extends AbstractController
 {
 
     /**
-     * @route("/get_pub_details", name="get_pub_details")
+     * @route("/add_pub_by_doi", name="add_pub_by_doi")
      * @route("/get_pub_details/{json_result}", name="pub_details")
      * @Method({"GET","POST"})
      */
@@ -61,30 +65,55 @@ class PubController extends AbstractController
            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0'));
 
            $json_result = curl_exec($curl);
-           //$result =json_decode($json_result);
-           //$ISSN = $result->{'ISSN'};
+           $result =json_decode($json_result);
+           !isset($result->{'ISSN'}) ?: $ISSN = $result->{'ISSN'};
+           !isset($volume) ?: $volume = $result->{'volume'};
+           $citations = $result->{'reference-count'};
+           $pubTitle = $result->{'title'};
+           $journal = $result->{'container-title'};
+           $author = $result->{'author'};
+           $URL = $result->{'URL'};
+           $pages = $result->{'page'};
+           if(isset($result->{'published-online'})){
+               $datePublished = $result->{'published-online'};
+               $yearPublished = $datePublished->{'date-parts'};
+           }
+            ##Generate list of authors
+           $authorArr = [];
+           foreach ($author as $key => $value){
+               if(isset($value->given))
+                   $authorArr[] = $value->given ." ". $value->family;
+           }
 
-           //dump($ISSN);
+           ##Extract year of publication from date of publication
 
-           $this->redirectToRoute('pub_details',[
-               'result' => $json_result,
+
+
+           $pub = new BPublications();
+           $pub->setTitle($pubTitle);
+           !isset($ISSN) ?: $pub->setIssn($ISSN[0]);
+           $pub->setLink($URL);
+           $pub->setAuthors(implode(", ", $authorArr));
+           $pub->setCitations($citations);
+           !isset($volume) ?: $pub->setVolume($volume);
+           !isset($yearPublished) ?: $pub->setDate($yearPublished[0][0]);
+           $pub->setDoi($doi);
+           !isset($pages) ?: $pub->setPages($pages);
+           $pub->setJournal($journal);
+
+           $em = $this->getDoctrine()->getManager();
+           $em->persist($pub);
+           $em->flush();
+
+           return $this->redirectToRoute('update_pub',[
+               'id' => $pub->getId(),
            ]);
        }
 
-       //dump($json_result);
-        if(isset($json_result)){
-            $result =json_decode($json_result) ;
-            $ISSN = $result->{'ISSN'};
-        }else{
-            $result = ['msg' => 'No result to display'];
-            $ISSN = '';
-        }
 
-       return $this->render('admin/pub/doi.html.twig', [
+       return $this->render('admin/pub/add_pub_by_doi.html.twig', [
            'dd' => $defaultData,
            'form' => $form->createView(),
-           'result' => $result,
-           'ISSN' => $ISSN,
        ]);
     }
 
@@ -138,11 +167,15 @@ class PubController extends AbstractController
     }
 
     /**
-     * @route("/view_pubs", name="view_pubs")
+     * @route("/view_pubs", defaults = {"page" = "1"}, name="view_pubs")
+     * @route("/view_pubs/{page}", name="view_pubs_paginated")
+     * @Method("GET")
+     * @Cache(smaxage="10")
      */
-    public function view_pubs(PubsRepository $pr)
+    public function view_pubs(int $page, PubsRepository $pr): Response
     {
-        $pubs = $pr->findAll();
+        //$pubs = $pr->findAll();
+        $pubs = $pr->findAllPaginated($page);
 
         return $this->render('admin/pub/view_pubs.html.twig', [
             'pubs' => $pubs,
@@ -152,21 +185,63 @@ class PubController extends AbstractController
     /**
      * @route("/add_pub", name="add_pub")
      */
-    public function add_pub(Request $request)
+    public function add_pub(Request $request, FileUploader $fp)
     {
-        //logic here
-    }
+        $pub = new BPublications();
 
-    /**
-     * @route("/update_pub/{id}", name="update_pub")
-     */
-    public function update_pub(Request $request, BPublications $pub)
-    {
         $form = $this->createForm(PublicationType::class, $pub);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            if($pub->getFile()){
+                $pubFile = $pub->getFile();
+                $pubFileName = $pubFile->getClientOriginalName();
+                $pubFile->move($fp->getTargetDirectory().'/'.$pubFileName);
+                $pub->setFile($pubFileName);
+                }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pub);
+            $em->flush();
+
+            $this->addFlash('message', 'Publication Added');
+
+            return $this->redirectToRoute('view_pubs');
+        }
+
+        return $this->render('admin/pub/add_pub.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @route("/update_pub/{id}", name="update_pub")
+     */
+    public function update_pub(Request $request, BPublications $pub, FileUploader $fp)
+    {
+        $oldPubFileName = $pub->getFile();
+
+        if(is_file($fp->getTargetDirectory().'/'.$oldPubFileName)){
+            $pub->setFile(new File($fp->getTargetDirectory().'/'.$oldPubFileName));
+
+        }
+
+
+        $form = $this->createForm(PublicationType::class, $pub);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            if(!is_null($pub->getFile())){
+                $pubFile = $pub->getFile();
+                $pubFileName = $pub->getImage()->getClientOriginalName() ;
+                $pubFile->move($fp->getTargetDirectory(), $pubFileName);
+                $pub->setFile($pubFileName);
+            }else {
+                $pub->setFile($oldPubFileName);
+            }
 
             $this->getDoctrine()->getManager()->flush();
 
@@ -180,5 +255,6 @@ class PubController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 
 }

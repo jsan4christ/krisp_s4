@@ -8,20 +8,21 @@
     <table class="table">
         <thead>
             <th>Title</th>
-            <th>Authors</th>
             <th>Date</th>
             <th>Journal</th>
-            <th>Volume</th>
         </thead>
         {% for pub in pubs %}
             <tr>
                 <td><a href="{{ path('update_pub', {id : pub.id}) }}" class="">{{ pub.title }}</a></td>
-                <td>{{ pub.authors | raw}}</td>
                 <td>{{ pub.date }}</td>
                 <td>{{ pub.journal }}</td>
-                <td>{{ pub.volume }}</td>
             </tr>
         {% endfor %}
     </table>
 
+    {% if pubs.haveToPaginate %}
+        <div class="navigation text-center">
+            {{ pagerfanta(pubs, 'twitter_bootstrap3_translated', {routeName : 'view_pubs_paginated'}) }}
+        </div>
+    {% endif %}
 {% endblock %}
