@@ -15,6 +15,14 @@
 /public/build/fonts/glyphicons-*
 /public/build/images/glyphicons-*
 
+/.idea/
+.idea/workspace.xml
+
+/.vscode/
+.vscode/launch.json
+
+.DS_STORE
+
 ###> symfony/framework-bundle ###
 .env
 /public/bundles/
