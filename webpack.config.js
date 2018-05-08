@@ -6,6 +6,8 @@ Encore
     .cleanupOutputBeforeBuild()
     .autoProvidejQuery()
     .autoProvideVariables({
+        $: 'jquery',
+        jQuery: 'jquery',
         "window.jQuery": "jquery",
         "window.Bloodhound": require.resolve('bloodhound-js'),
         "jQuery.tagsinput": "bootstrap-tagsinput"
@@ -17,6 +19,7 @@ Encore
     .addEntry('js/login', './assets/js/login.js')
     .addEntry('js/admin', './assets/js/admin.js')
     .addEntry('js/search', './assets/js/search.js')
+    .addEntry('js/pubForm', './assets/js/pubForm.js')
     .addStyleEntry('css/app', ['./assets/scss/app.scss'])
     .addStyleEntry('css/admin', ['./assets/scss/admin.scss'])
 ;

@@ -23,4 +23,17 @@
             Update Member <i class="fa fa-edit" aria-hidden="true"></i>
         </button>
     {{ form_end(form) }}
+    {% block javascripts %}
+        <script src="//code.jquery.com/jquery-3.3.1.min.js" /></script>
+        <script>
+            jQuery(document).ready(function($){
+                $(".emojis").children("div").each(function(){
+                    var $this = $(this).children("label");
+                    $this.html().replace(' &lt;', '<');
+                    console.log($this.html());
+
+                });
+            });
+        </script>
+    {% endblock %}
 {% endblock %}
