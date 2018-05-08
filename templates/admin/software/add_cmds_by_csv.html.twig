@@ -1,0 +1,11 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block body_id 'cmds_by_csv' %}
+
+{% block main %}
+    <h1>Upload CSV File with Commands</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}

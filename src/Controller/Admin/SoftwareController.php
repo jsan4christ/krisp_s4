@@ -598,9 +598,53 @@ class SoftwareController extends AbstractController
     /**
      * @route("/add_cmds_by_csv", name="add_cmds_by_csv")
      */
-    public function add_cmd_by_csv()
+    public function add_cmd_by_csv(Request $request)
     {
-        //add logic
+        $arrCSV = ['msg' => "Upload CSV File"];
+
+        $form = $this->createFormBuilder($arrCSV)
+                            ->add('csvFile', FileType::class, [
+                                'label' => 'CSV File',
+                            ])
+                            ->add('upload', SubmitType::class, [
+                                'label' => 'Upload File'
+                            ])
+                            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $cmds = $form->getData();
+
+            $fileHandle = fopen($cmds['csvFile'], 'r');
+
+            $em = $this->getDoctrine()->getManager();
+
+
+
+            while(($data = fgetcsv($fileHandle)) !== FALSE ){
+
+                $sw = $em->find(BInstalledSw::class, $data[0]);
+
+                $cmd = new BSwCmds();
+                $cmd->setSoftware($sw);
+                $cmd->setCmdName($data[1]);
+                $cmd->setCmdActive($data[2]);
+                $em->persist($cmd);
+
+
+            }
+
+            $em->flush();
+            $this->addFlash('message', 'Commands Added Successfully');
+
+            return $this->redirectToRoute('view_software');
+        }
+
+        return $this->render('admin/software/add_cmds_by_csv.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
     ##################End Commands##########################
 
